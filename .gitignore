@@ -1,0 +1,20 @@
+# deps
+node_modules/
+
+# next.js
+.next/
+out/
+
+# env files — never commit secrets
+.env
+.env.local
+.env.production
+
+# prisma local db
+prisma/dev.db
+prisma/dev.db-journal
+
+# misc
+.DS_Store
+*.pem
+npm-debug.log*
