@@ -7,7 +7,7 @@ const resend = new Resend(process.env.RESEND_API_KEY)
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
-    const { name, email, industry, asking_price, financials_available, timeline } = body
+    const { name, email, phone, industry, asking_price, financials_available, timeline } = body
 
     // Validate required fields
     if (!name || !email || !industry || !asking_price || !financials_available || !timeline) {
@@ -20,7 +20,7 @@ export async function POST(req: NextRequest) {
 
     // Store in DB
     await prisma.lead.create({
-      data: { name, email, industry, asking_price, financials_available, timeline },
+      data: { name, email, phone: phone || null, industry, asking_price, financials_available, timeline },
     })
 
     // Send notification email
@@ -45,6 +45,10 @@ export async function POST(req: NextRequest) {
                 <td style="padding: 8px 0; color: #71717a;">Email</td>
                 <td style="padding: 8px 0; color: #f4f4f5;"><a href="mailto:${email}" style="color: #F59E0B;">${email}</a></td>
               </tr>
+              ${phone ? `<tr>
+                <td style="padding: 8px 0; color: #71717a;">Phone</td>
+                <td style="padding: 8px 0; color: #f4f4f5;">${phone}</td>
+              </tr>` : ''}
               <tr>
                 <td style="padding: 8px 0; color: #71717a;">Industry</td>
                 <td style="padding: 8px 0; color: #f4f4f5;">${industry}</td>

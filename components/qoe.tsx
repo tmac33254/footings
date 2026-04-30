@@ -74,7 +74,7 @@ export default function Qoe() {
                 Report Deliverables
               </div>
               {deliverables.map((item, i) => (
-                <AnimateIn key={i} delay={i * 60}>
+                <AnimateIn key={i} delay={i * 30}>
                   <div className="flex items-start gap-4 py-4 border-t border-zinc-700/60">
                     <CheckCircle
                       size={16}

@@ -4,7 +4,7 @@ import Nav from '@/components/nav'
 import Footer from '@/components/footer'
 
 export const metadata: Metadata = {
-  title: 'The Working Capital Trap in Trades Business Acquisitions | Footings',
+  title: 'The Working Capital Trap in Trades Business Acquisitions',
   description:
     "Most buyers negotiate the purchase price and ignore working capital. Then they close, and the business runs out of cash. Here's what working capital means in HVAC and plumbing acquisitions — and how to protect yourself.",
   openGraph: {

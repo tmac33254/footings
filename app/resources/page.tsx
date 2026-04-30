@@ -4,7 +4,7 @@ import Nav from '@/components/nav'
 import Footer from '@/components/footer'
 
 export const metadata: Metadata = {
-  title: 'Resources for Trades Business Buyers | Footings',
+  title: 'Resources for Trades Business Buyers',
   description:
     'Guides on quality of earnings, EBITDA normalization, working capital traps, and financial due diligence for buyers of HVAC, plumbing, roofing, and other trades businesses.',
   openGraph: {
@@ -41,6 +41,15 @@ const articles = [
       "Most buyers negotiate price and ignore working capital. Then they close, and the business runs out of cash in 60 days. Here's what working capital means and how to protect yourself.",
     readTime: '9 min read',
     topics: ['Working Capital', 'Closing', 'Cash Flow'],
+  },
+  {
+    slug: 'add-back-schedule',
+    label: '04',
+    title: "How to Read a Seller's Add-Back Schedule (And When to Push Back)",
+    description:
+      "Sellers present add-backs as adjustments in your favor. Some are legitimate. Some inflate EBITDA by six figures. Here's how to tell the difference.",
+    readTime: '11 min read',
+    topics: ['Add-Backs', 'EBITDA', 'Negotiation'],
   },
 ]
 

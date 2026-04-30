@@ -40,16 +40,15 @@
   }
 
   .animate-fade-up {
-    opacity: 0;
-    animation: fadeUp 0.55s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+    animation: fadeUp 0.5s cubic-bezier(0.23, 1, 0.32, 1) backwards;
   }
 
-  .animate-delay-100 { animation-delay: 100ms; }
-  .animate-delay-200 { animation-delay: 200ms; }
-  .animate-delay-300 { animation-delay: 300ms; }
-  .animate-delay-400 { animation-delay: 400ms; }
-  .animate-delay-500 { animation-delay: 500ms; }
-  .animate-delay-600 { animation-delay: 600ms; }
+  .animate-delay-100 { animation-delay: 60ms; }
+  .animate-delay-200 { animation-delay: 120ms; }
+  .animate-delay-300 { animation-delay: 180ms; }
+  .animate-delay-400 { animation-delay: 240ms; }
+  .animate-delay-500 { animation-delay: 300ms; }
+  .animate-delay-600 { animation-delay: 360ms; }
 }
 
 @keyframes fadeUp {

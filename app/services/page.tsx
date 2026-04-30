@@ -6,7 +6,7 @@ import IntakeForm from '@/components/intake-form'
 import { AnimateIn } from '@/components/animate-in'
 
 export const metadata: Metadata = {
-  title: 'Services — Quality of Earnings & Fractional CFO | Footings',
+  title: 'Services — Quality of Earnings & Fractional CFO',
   description:
     'Fixed-fee Quality of Earnings reports and fractional CFO services for buyers of HVAC, plumbing, roofing, and other trades businesses. 5–7 day turnaround. Buy-side only.',
   openGraph: {

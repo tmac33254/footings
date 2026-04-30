@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: '%s | Footings',
   },
   description:
-    "Quality of Earnings reports and fractional CFO services for buyers of HVAC, plumbing, roofing, and other trades businesses. Fixed pricing. 5–7 day turnaround. Buy-side only.",
+    "Buy-side Quality of Earnings reports for HVAC, plumbing, roofing, and other trades acquisitions. Fixed flat fee from $2,500. 5–7 business day turnaround. We catch inflated EBITDA, working capital gaps, and owner-dependent revenue before they become your problem.",
   keywords: [
     'quality of earnings trades business',
     'HVAC acquisition due diligence',

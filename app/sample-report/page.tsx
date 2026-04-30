@@ -4,7 +4,7 @@ import Nav from '@/components/nav'
 import Footer from '@/components/footer'
 
 export const metadata: Metadata = {
-  title: 'Sample Quality of Earnings Report | Footings',
+  title: 'Sample Quality of Earnings Report',
   description:
     'See exactly what a Footings QoE report looks like. This sample covers a $3.8M HVAC acquisition — EBITDA normalization, working capital, customer concentration, and red flags.',
   openGraph: {
@@ -148,7 +148,7 @@ export default function SampleReportPage() {
           </div>
 
           {/* Executive Summary */}
-          <div className="mb-12 pb-12 border-b border-zinc-700/60">
+          <div className="mb-8 pb-5 border-b border-zinc-700/60">
             <SectionHeader label="Section 01">Executive Summary</SectionHeader>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
               {[
@@ -200,7 +200,7 @@ export default function SampleReportPage() {
           </div>
 
           {/* EBITDA Normalization */}
-          <div className="mb-12 pb-12 border-b border-zinc-700/60">
+          <div className="mb-8 pb-5 border-b border-zinc-700/60">
             <SectionHeader label="Section 02">EBITDA Normalization</SectionHeader>
             <p className="text-[15px] text-zinc-400 leading-relaxed mb-8">
               The following schedule normalizes the seller-stated EBITDA by removing non-recurring
@@ -289,7 +289,7 @@ export default function SampleReportPage() {
           </div>
 
           {/* Working Capital */}
-          <div className="mb-12 pb-12 border-b border-zinc-700/60">
+          <div className="mb-8 pb-5 border-b border-zinc-700/60">
             <SectionHeader label="Section 03">Working Capital Analysis</SectionHeader>
             <p className="text-[15px] text-zinc-400 leading-relaxed mb-8">
               Working capital represents the net short-term assets required for the business to
@@ -329,7 +329,7 @@ export default function SampleReportPage() {
           </div>
 
           {/* Customer Concentration */}
-          <div className="mb-12 pb-12 border-b border-zinc-700/60">
+          <div className="mb-8 pb-5 border-b border-zinc-700/60">
             <SectionHeader label="Section 04">Customer Concentration</SectionHeader>
             <p className="text-[15px] text-zinc-400 leading-relaxed mb-8">
               Customer concentration represents a risk to revenue sustainability post-close.
@@ -380,7 +380,7 @@ export default function SampleReportPage() {
           </div>
 
           {/* Red Flags */}
-          <div className="mb-12 pb-12 border-b border-zinc-700/60">
+          <div className="mb-8 pb-5 border-b border-zinc-700/60">
             <SectionHeader label="Section 05">Red Flags</SectionHeader>
             <p className="text-[15px] text-zinc-400 leading-relaxed mb-8">
               The following issues were identified during our analysis. Each represents a deal
@@ -410,7 +410,7 @@ export default function SampleReportPage() {
           </div>
 
           {/* Recommendations */}
-          <div className="mb-12 pb-12 border-b border-zinc-700/60">
+          <div className="mb-8 pb-5 border-b border-zinc-700/60">
             <SectionHeader label="Section 06">Recommendations</SectionHeader>
 
             <div className="space-y-4">

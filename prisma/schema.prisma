@@ -11,6 +11,7 @@ model Lead {
   id                   Int      @id @default(autoincrement())
   name                 String
   email                String
+  phone                String?
   industry             String
   asking_price         String
   financials_available String

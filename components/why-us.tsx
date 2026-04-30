@@ -37,7 +37,7 @@ export default function WhyUs() {
 
         <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-0">
           {points.map((p, i) => (
-            <AnimateIn key={i} delay={i * 80}>
+            <AnimateIn key={i} delay={i * 30}>
               <div className="py-8 border-t border-zinc-700/60">
                 <div className="text-sm font-semibold text-zinc-100 leading-snug">
                   {p.label}

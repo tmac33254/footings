@@ -4,7 +4,7 @@ import Nav from '@/components/nav'
 import Footer from '@/components/footer'
 
 export const metadata: Metadata = {
-  title: "What Is a Quality of Earnings Report? A Buyer's Guide | Footings",
+  title: "What Is a Quality of Earnings Report? A Buyer's Guide",
   description:
     "A quality of earnings (QoE) report normalizes EBITDA, flags hidden risks, and tells you what a business is actually worth. This guide explains what's in one and why you need it before closing on a trades acquisition.",
   openGraph: {

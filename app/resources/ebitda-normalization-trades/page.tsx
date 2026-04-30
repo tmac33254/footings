@@ -4,7 +4,7 @@ import Nav from '@/components/nav'
 import Footer from '@/components/footer'
 
 export const metadata: Metadata = {
-  title: 'EBITDA Normalization in Trades Business Acquisitions | Footings',
+  title: 'EBITDA Normalization in Trades Business Acquisitions',
   description:
     'Owner compensation, personal vehicles, family payroll, one-time revenue — learn the most common EBITDA add-backs and adjustments buyers miss in HVAC, plumbing, and roofing acquisitions.',
   openGraph: {

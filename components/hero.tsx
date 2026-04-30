@@ -3,7 +3,6 @@ import { ArrowRight } from '@phosphor-icons/react/dist/ssr'
 function QoeDocPreview() {
   return (
     <div className="font-mono text-xs border border-zinc-700 bg-zinc-900 w-full max-w-[440px] shadow-2xl shadow-black/60">
-      {/* Header bar */}
       <div className="bg-zinc-800 px-4 py-2.5 flex items-center justify-between border-b border-zinc-700">
         <span className="text-amber-500 tracking-[0.15em] uppercase text-[10px] font-semibold">
           FOOTINGS
@@ -12,7 +11,6 @@ function QoeDocPreview() {
       </div>
 
       <div className="p-5 space-y-4">
-        {/* Target info */}
         <div className="space-y-1.5 text-[11px]">
           <div className="flex justify-between gap-4">
             <span className="text-zinc-400">Target</span>
@@ -30,7 +28,6 @@ function QoeDocPreview() {
 
         <div className="border-t border-zinc-700/60" />
 
-        {/* EBITDA reconciliation */}
         <div>
           <div className="text-[9px] uppercase tracking-[0.18em] text-zinc-400 mb-3">
             EBITDA Normalization
@@ -70,7 +67,6 @@ function QoeDocPreview() {
 
         <div className="border-t border-zinc-700/60" />
 
-        {/* Red flags */}
         <div>
           <div className="text-[9px] uppercase tracking-[0.18em] text-amber-500/90 mb-2.5 font-semibold">
             Red Flags — 3 Identified
@@ -111,24 +107,23 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-16 lg:gap-20 items-center">
           {/* Left: copy */}
           <div className="max-w-2xl">
-            <div className="animate-fade-up animate-delay-100">
-              <span className="font-mono text-[11px] text-amber-500 tracking-[0.2em] uppercase">
-                / Financial Due Diligence
-              </span>
-            </div>
+            {/* Supertitle — no delay, visible immediately */}
+            <span className="font-mono text-[11px] text-amber-500 tracking-[0.2em] uppercase animate-fade-up">
+              / Financial Due Diligence
+            </span>
 
-            <h1 className="mt-5 text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-balance animate-fade-up animate-delay-200">
+            <h1 className="mt-5 text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-balance animate-fade-up animate-delay-100">
               Don&apos;t close on a trades business until you know what you&apos;re{' '}
               <span className="text-amber-500">actually buying.</span>
             </h1>
 
-            <p className="mt-6 text-lg text-zinc-300 leading-relaxed max-w-xl animate-fade-up animate-delay-300">
+            <p className="mt-6 text-lg text-zinc-300 leading-relaxed max-w-xl animate-fade-up animate-delay-200">
               We catch inflated EBITDA, hidden liabilities, and owner-dependent revenue before
               they become your problem — with a full Quality of Earnings report in 5–7 business
               days.
             </p>
 
-            <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4 animate-fade-up animate-delay-400">
+            <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4 animate-fade-up animate-delay-300">
               <a
                 href="#intake"
                 style={{
@@ -137,15 +132,15 @@ export default function Hero() {
                 }}
                 className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 active:scale-[0.97] text-zinc-950 font-semibold text-sm px-6 py-3"
               >
-                Get a Quote
+                Get My Quote
                 <ArrowRight weight="bold" size={15} />
               </a>
               <a
-                href="#deliverables"
+                href="/sample-report"
                 style={{ transition: 'color 150ms ease' }}
                 className="inline-flex items-center gap-2 text-zinc-300 hover:text-zinc-100 font-medium text-sm group"
               >
-                See What&apos;s Inside
+                See a Sample Report
                 <ArrowRight
                   size={15}
                   style={{ transition: 'transform 150ms cubic-bezier(0.23, 1, 0.32, 1)' }}
@@ -154,20 +149,33 @@ export default function Hero() {
               </a>
             </div>
 
-            <p className="mt-8 text-xs text-zinc-500 leading-relaxed animate-fade-up animate-delay-500">
+            {/* Trust badge */}
+            <div className="mt-8 flex items-center gap-3 animate-fade-up animate-delay-400">
+              <span className="inline-flex items-center gap-2 px-3 py-1.5 border border-zinc-700/60 bg-zinc-900/60">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0" />
+                <span className="text-xs text-zinc-400 font-mono">
+                  Currently quoting deals — 24hr response guaranteed
+                </span>
+              </span>
+            </div>
+
+            <p className="mt-5 text-xs text-zinc-500 leading-relaxed animate-fade-up animate-delay-400">
               Built by an accounting and finance grad who&apos;s run a service business — not a
               Big 4 robot.
             </p>
           </div>
 
-          {/* Right: QoE doc preview */}
-          <div className="hidden lg:flex justify-end animate-fade-up animate-delay-300">
+          {/* Right: QoE doc preview — single instance, responsive visibility via CSS */}
+          <div
+            className="justify-end animate-fade-up animate-delay-200 hidden lg:flex"
+            aria-hidden="true"
+          >
             <QoeDocPreview />
           </div>
         </div>
 
-        {/* Mobile doc preview */}
-        <div className="lg:hidden mt-12 flex justify-center animate-fade-up animate-delay-400">
+        {/* Mobile: same card shown below the copy */}
+        <div className="lg:hidden mt-12 flex justify-center animate-fade-up animate-delay-300" aria-hidden="true">
           <QoeDocPreview />
         </div>
       </div>

@@ -6,6 +6,7 @@ import { ArrowRight, CheckCircle, Warning } from '@phosphor-icons/react'
 interface FormData {
   name: string
   email: string
+  phone: string
   industry: string
   asking_price: string
   financials_available: string
@@ -15,9 +16,10 @@ interface FormData {
 const initialForm: FormData = {
   name: '',
   email: '',
+  phone: '',
   industry: '',
   asking_price: '',
-  financials_available: '',
+  financials_available: 'Partial',
   timeline: '',
 }
 
@@ -49,6 +51,10 @@ const inputBase =
 
 const inputTransition = { transition: 'border-color 150ms ease' }
 
+function RequiredMark() {
+  return <span className="text-amber-500 ml-0.5">*</span>
+}
+
 export default function IntakeForm() {
   const [form, setForm] = useState<FormData>(initialForm)
   const [status, setStatus] = useState<Status>('idle')
@@ -57,13 +63,12 @@ export default function IntakeForm() {
 
   function validate(): boolean {
     const next: Partial<FormData> = {}
-    if (!form.name.trim()) next.name = 'Required'
-    if (!form.email.trim()) next.email = 'Required'
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) next.email = 'Invalid email'
-    if (!form.industry) next.industry = 'Required'
-    if (!form.asking_price.trim()) next.asking_price = 'Required'
-    if (!form.financials_available) next.financials_available = 'Required'
-    if (!form.timeline) next.timeline = 'Required'
+    if (!form.name.trim()) next.name = 'This field is required'
+    if (!form.email.trim()) next.email = 'This field is required'
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) next.email = 'Enter a valid email'
+    if (!form.industry) next.industry = 'This field is required'
+    if (!form.asking_price.trim()) next.asking_price = 'This field is required'
+    if (!form.timeline) next.timeline = 'This field is required'
     setErrors(next)
     return Object.keys(next).length === 0
   }
@@ -161,7 +166,7 @@ export default function IntakeForm() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div className="space-y-1.5">
                 <label className="block text-xs font-medium text-zinc-300 tracking-wide uppercase">
-                  Full Name
+                  Full Name<RequiredMark />
                 </label>
                 <input
                   name="name"
@@ -179,7 +184,7 @@ export default function IntakeForm() {
 
               <div className="space-y-1.5">
                 <label className="block text-xs font-medium text-zinc-300 tracking-wide uppercase">
-                  Email
+                  Email<RequiredMark />
                 </label>
                 <input
                   name="email"
@@ -197,10 +202,28 @@ export default function IntakeForm() {
               </div>
             </div>
 
+            {/* Phone */}
+            <div className="space-y-1.5">
+              <label className="block text-xs font-medium text-zinc-300 tracking-wide uppercase">
+                Phone{' '}
+                <span className="text-zinc-500 normal-case font-normal">(optional — text-friendly)</span>
+              </label>
+              <input
+                name="phone"
+                type="tel"
+                value={form.phone}
+                onChange={handleChange}
+                disabled={status === 'loading'}
+                placeholder="+1 (312) 847-1928"
+                style={inputTransition}
+                className={`${inputBase} border-zinc-600 focus:border-amber-500/70`}
+              />
+            </div>
+
             {/* Industry */}
             <div className="space-y-1.5">
               <label className="block text-xs font-medium text-zinc-300 tracking-wide uppercase">
-                Target Business Industry
+                Target Business Industry<RequiredMark />
               </label>
               <select
                 name="industry"
@@ -228,7 +251,7 @@ export default function IntakeForm() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div className="space-y-1.5">
                 <label className="block text-xs font-medium text-zinc-300 tracking-wide uppercase">
-                  Asking Price
+                  Asking Price<RequiredMark />
                 </label>
                 <input
                   name="asking_price"
@@ -275,16 +298,13 @@ export default function IntakeForm() {
                     </label>
                   ))}
                 </div>
-                {errors.financials_available && (
-                  <p className="text-xs text-red-400">{errors.financials_available}</p>
-                )}
               </div>
             </div>
 
             {/* Timeline */}
             <div className="space-y-1.5">
               <label className="block text-xs font-medium text-zinc-300 tracking-wide uppercase">
-                Where Are You in the Process?
+                Where Are You in the Process?<RequiredMark />
               </label>
               <select
                 name="timeline"
@@ -333,7 +353,7 @@ export default function IntakeForm() {
                 </>
               ) : (
                 <>
-                  Send Deal Details
+                  Get My Quote
                   <ArrowRight weight="bold" size={15} />
                 </>
               )}
@@ -341,6 +361,9 @@ export default function IntakeForm() {
 
             <p className="text-xs text-zinc-500">
               We don&apos;t share your information. Quote arrives within 24 hours on business days.
+              <span className="ml-2 text-zinc-600">
+                <RequiredMark /> Required fields
+              </span>
             </p>
           </form>
         </div>
