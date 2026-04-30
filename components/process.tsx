@@ -37,49 +37,61 @@ export default function Process() {
         </AnimateIn>
 
         {/* Desktop: horizontal timeline */}
-        <div className="hidden md:block mt-16">
-          {/* Connector line */}
-          <div className="relative">
-            <div className="absolute top-5 left-[2.5rem] right-[2.5rem] h-px bg-zinc-700/60" />
-            <div className="grid grid-cols-4 gap-6">
-              {steps.map((step, i) => (
-                <AnimateIn key={step.number} delay={i * 100}>
-                  <div className="relative pt-0">
-                    {/* Node */}
-                    <div className="relative z-10 w-10 h-10 flex items-center justify-center border border-zinc-700 bg-zinc-950 mb-6">
-                      <span className="font-mono text-xs font-semibold text-amber-500">
-                        {step.number}
-                      </span>
-                    </div>
-                    <div className="text-sm font-semibold text-zinc-100 leading-snug">
-                      {step.title}
-                    </div>
-                    <p className="mt-2.5 text-[13px] text-zinc-400 leading-relaxed">
-                      {step.body}
-                    </p>
+        <div className="hidden md:grid md:grid-cols-4 gap-6 mt-16">
+          {/* Connector line sits behind the cards */}
+          <div
+            className="col-span-4 row-start-1 col-start-1 relative"
+            style={{ gridRow: 1, gridColumn: '1 / -1' }}
+          />
+          {steps.map((step, i) => (
+            <AnimateIn key={step.number} delay={i * 100}>
+              <div className="relative group">
+                {/* Decorative background number */}
+                <div
+                  className="absolute -top-6 -left-1 font-mono font-bold text-zinc-800/50 leading-none pointer-events-none select-none"
+                  style={{ fontSize: 'clamp(5rem, 8vw, 7rem)' }}
+                  aria-hidden="true"
+                >
+                  {step.number}
+                </div>
+
+                {/* Content */}
+                <div className="relative z-10 pt-12">
+                  {/* Connector dot */}
+                  <div className="flex items-center gap-3 mb-5">
+                    <div className="w-2 h-2 rounded-full bg-amber-500 shrink-0" />
+                    {i < steps.length - 1 && (
+                      <div className="flex-1 h-px bg-zinc-700/60" />
+                    )}
                   </div>
-                </AnimateIn>
-              ))}
-            </div>
-          </div>
+                  <div className="text-base font-semibold text-zinc-100 leading-snug">
+                    {step.title}
+                  </div>
+                  <p className="mt-2.5 text-[13px] text-zinc-400 leading-relaxed">
+                    {step.body}
+                  </p>
+                </div>
+              </div>
+            </AnimateIn>
+          ))}
         </div>
 
-        {/* Mobile: vertical timeline */}
+        {/* Mobile: vertical */}
         <div className="md:hidden mt-12 space-y-0">
           {steps.map((step, i) => (
             <AnimateIn key={step.number} delay={i * 80}>
-              <div className="relative flex gap-6 pb-10">
-                {/* Vertical line */}
+              <div className="relative flex gap-5 pb-10">
                 {i < steps.length - 1 && (
-                  <div className="absolute left-5 top-10 bottom-0 w-px bg-zinc-700/60" />
+                  <div className="absolute left-3.5 top-8 bottom-0 w-px bg-zinc-700/60" />
                 )}
                 {/* Node */}
-                <div className="relative z-10 w-10 h-10 shrink-0 flex items-center justify-center border border-zinc-700 bg-zinc-950">
-                  <span className="font-mono text-xs font-semibold text-amber-500">
-                    {step.number}
-                  </span>
+                <div className="relative z-10 w-7 h-7 shrink-0 flex items-center justify-center rounded-full border border-zinc-700 bg-zinc-950">
+                  <div className="w-1.5 h-1.5 rounded-full bg-amber-500" />
                 </div>
-                <div className="pt-2">
+                <div className="pt-0.5">
+                  <div className="font-mono text-[10px] text-zinc-600 tracking-widest mb-1">
+                    {step.number}
+                  </div>
                   <div className="text-sm font-semibold text-zinc-100">{step.title}</div>
                   <p className="mt-2 text-[13px] text-zinc-400 leading-relaxed">{step.body}</p>
                 </div>

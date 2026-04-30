@@ -48,24 +48,6 @@ export default function WhyUs() {
           ))}
         </div>
 
-        {/* Trust bar */}
-        <AnimateIn delay={200}>
-          <div className="mt-12 pt-8 border-t border-zinc-700/60 flex flex-wrap gap-8 md:gap-12">
-            {[
-              { value: '$2,500', label: 'Starting price' },
-              { value: '5–7 days', label: 'Report turnaround' },
-              { value: '100%', label: 'Buy-side only — we never work for sellers' },
-              { value: 'Fixed', label: 'Pricing, no hourly surprises' },
-            ].map((stat) => (
-              <div key={stat.label}>
-                <div className="font-mono text-xl font-semibold text-zinc-100 tabular-nums">
-                  {stat.value}
-                </div>
-                <div className="mt-1 text-xs text-zinc-500">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </AnimateIn>
       </div>
     </section>
   )
