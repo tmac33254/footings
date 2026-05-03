@@ -47,7 +47,7 @@ const timelines = [
 type Status = 'idle' | 'loading' | 'success' | 'error'
 
 const inputBase =
-  'w-full bg-zinc-900 border text-sm text-zinc-100 px-4 py-3 placeholder-zinc-500 focus:outline-none disabled:opacity-50'
+  'w-full bg-white border text-sm text-zinc-900 px-4 py-3 placeholder-zinc-400 focus:outline-none disabled:opacity-50'
 
 const inputTransition = { transition: 'border-color 150ms ease' }
 
@@ -106,18 +106,18 @@ export default function IntakeForm() {
 
   if (status === 'success') {
     return (
-      <section id="intake" className="py-24 bg-zinc-900/40 border-t border-zinc-700/60">
+      <section id="intake" className="py-24 bg-zinc-50 border-t border-zinc-200">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="max-w-xl mx-auto text-center space-y-6">
             <CheckCircle size={40} weight="fill" className="text-amber-500 mx-auto" />
-            <h2 className="text-2xl font-bold tracking-tight">
+            <h2 className="text-2xl font-bold tracking-tight text-zinc-900">
               Got it. You&apos;ll hear from us within 24 hours.
             </h2>
-            <p className="text-zinc-300">
+            <p className="text-zinc-600">
               We&apos;ll review your deal details and come back with a fixed-fee quote and a list
               of exactly what we need to get started.
             </p>
-            <p className="text-sm text-zinc-500">
+            <p className="text-sm text-zinc-400">
               Check your spam folder if you don&apos;t see anything by tomorrow.
             </p>
           </div>
@@ -127,34 +127,34 @@ export default function IntakeForm() {
   }
 
   return (
-    <section id="intake" className="py-24 bg-zinc-900/40 border-t border-zinc-700/60">
+    <section id="intake" className="py-24 bg-zinc-50 border-t border-zinc-200">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-16 items-start">
           {/* Left: CTA copy */}
           <div>
-            <span className="font-mono text-[11px] text-amber-500 tracking-[0.2em] uppercase">
+            <span className="font-mono text-[11px] text-amber-600 tracking-[0.2em] uppercase">
               / Get a Quote
             </span>
-            <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight">
+            <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-zinc-900">
               Got a deal under LOI? Send the basics and get a quote in 24 hours.
             </h2>
-            <p className="mt-5 text-zinc-300 leading-relaxed">
+            <p className="mt-5 text-zinc-600 leading-relaxed">
               No commitment required. We&apos;ll review what you send and come back with a
               fixed-fee quote. If the deal doesn&apos;t make sense for our scope, we&apos;ll tell
               you that too.
             </p>
 
-            <div className="mt-8 space-y-3 text-sm text-zinc-400">
+            <div className="mt-8 space-y-3 text-sm text-zinc-500">
               <div className="flex items-center gap-3">
-                <span className="font-mono text-amber-500">01</span>
+                <span className="font-mono text-amber-600">01</span>
                 <span>Submit your deal details below</span>
               </div>
               <div className="flex items-center gap-3">
-                <span className="font-mono text-amber-500">02</span>
+                <span className="font-mono text-amber-600">02</span>
                 <span>Quote arrives within 24 hours</span>
               </div>
               <div className="flex items-center gap-3">
-                <span className="font-mono text-amber-500">03</span>
+                <span className="font-mono text-amber-600">03</span>
                 <span>Sign + send financials to start</span>
               </div>
             </div>
@@ -165,7 +165,7 @@ export default function IntakeForm() {
             {/* Name + Email */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div className="space-y-1.5">
-                <label className="block text-xs font-medium text-zinc-300 tracking-wide uppercase">
+                <label className="block text-xs font-medium text-zinc-700 tracking-wide uppercase">
                   Full Name<RequiredMark />
                 </label>
                 <input
@@ -176,14 +176,14 @@ export default function IntakeForm() {
                   placeholder="Marcus Rivera"
                   style={inputTransition}
                   className={`${inputBase} ${
-                    errors.name ? 'border-red-500/60' : 'border-zinc-600 focus:border-amber-500/70'
+                    errors.name ? 'border-red-400' : 'border-zinc-300 focus:border-amber-500'
                   }`}
                 />
-                {errors.name && <p className="text-xs text-red-400">{errors.name}</p>}
+                {errors.name && <p className="text-xs text-red-500">{errors.name}</p>}
               </div>
 
               <div className="space-y-1.5">
-                <label className="block text-xs font-medium text-zinc-300 tracking-wide uppercase">
+                <label className="block text-xs font-medium text-zinc-700 tracking-wide uppercase">
                   Email<RequiredMark />
                 </label>
                 <input
@@ -195,18 +195,18 @@ export default function IntakeForm() {
                   placeholder="marcus@acquirehvac.com"
                   style={inputTransition}
                   className={`${inputBase} ${
-                    errors.email ? 'border-red-500/60' : 'border-zinc-600 focus:border-amber-500/70'
+                    errors.email ? 'border-red-400' : 'border-zinc-300 focus:border-amber-500'
                   }`}
                 />
-                {errors.email && <p className="text-xs text-red-400">{errors.email}</p>}
+                {errors.email && <p className="text-xs text-red-500">{errors.email}</p>}
               </div>
             </div>
 
             {/* Phone */}
             <div className="space-y-1.5">
-              <label className="block text-xs font-medium text-zinc-300 tracking-wide uppercase">
+              <label className="block text-xs font-medium text-zinc-700 tracking-wide uppercase">
                 Phone{' '}
-                <span className="text-zinc-500 normal-case font-normal">(optional — text-friendly)</span>
+                <span className="text-zinc-400 normal-case font-normal">(optional — text-friendly)</span>
               </label>
               <input
                 name="phone"
@@ -216,13 +216,13 @@ export default function IntakeForm() {
                 disabled={status === 'loading'}
                 placeholder="+1 (312) 847-1928"
                 style={inputTransition}
-                className={`${inputBase} border-zinc-600 focus:border-amber-500/70`}
+                className={`${inputBase} border-zinc-300 focus:border-amber-500`}
               />
             </div>
 
             {/* Industry */}
             <div className="space-y-1.5">
-              <label className="block text-xs font-medium text-zinc-300 tracking-wide uppercase">
+              <label className="block text-xs font-medium text-zinc-700 tracking-wide uppercase">
                 Target Business Industry<RequiredMark />
               </label>
               <select
@@ -232,25 +232,25 @@ export default function IntakeForm() {
                 disabled={status === 'loading'}
                 style={inputTransition}
                 className={`${inputBase} appearance-none cursor-pointer ${
-                  errors.industry ? 'border-red-500/60' : 'border-zinc-600 focus:border-amber-500/70'
-                } ${!form.industry ? 'text-zinc-500' : ''}`}
+                  errors.industry ? 'border-red-400' : 'border-zinc-300 focus:border-amber-500'
+                } ${!form.industry ? 'text-zinc-400' : ''}`}
               >
                 <option value="" disabled>
                   Select an industry
                 </option>
                 {industries.map((ind) => (
-                  <option key={ind} value={ind} className="text-zinc-100 bg-zinc-900">
+                  <option key={ind} value={ind}>
                     {ind}
                   </option>
                 ))}
               </select>
-              {errors.industry && <p className="text-xs text-red-400">{errors.industry}</p>}
+              {errors.industry && <p className="text-xs text-red-500">{errors.industry}</p>}
             </div>
 
             {/* Asking price + Financials */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div className="space-y-1.5">
-                <label className="block text-xs font-medium text-zinc-300 tracking-wide uppercase">
+                <label className="block text-xs font-medium text-zinc-700 tracking-wide uppercase">
                   Asking Price<RequiredMark />
                 </label>
                 <input
@@ -262,17 +262,17 @@ export default function IntakeForm() {
                   style={inputTransition}
                   className={`${inputBase} ${
                     errors.asking_price
-                      ? 'border-red-500/60'
-                      : 'border-zinc-600 focus:border-amber-500/70'
+                      ? 'border-red-400'
+                      : 'border-zinc-300 focus:border-amber-500'
                   }`}
                 />
                 {errors.asking_price && (
-                  <p className="text-xs text-red-400">{errors.asking_price}</p>
+                  <p className="text-xs text-red-500">{errors.asking_price}</p>
                 )}
               </div>
 
               <div className="space-y-1.5">
-                <label className="block text-xs font-medium text-zinc-300 tracking-wide uppercase">
+                <label className="block text-xs font-medium text-zinc-700 tracking-wide uppercase">
                   Financials Available?
                 </label>
                 <div className="flex gap-3 pt-1">
@@ -282,8 +282,8 @@ export default function IntakeForm() {
                       style={{ transition: 'border-color 150ms ease, color 150ms ease' }}
                       className={`flex items-center gap-2 cursor-pointer text-sm px-3 py-2.5 border ${
                         form.financials_available === opt
-                          ? 'border-amber-500/70 text-amber-400 bg-amber-500/5'
-                          : 'border-zinc-600 text-zinc-300 hover:border-zinc-500'
+                          ? 'border-amber-500 text-amber-700 bg-amber-50'
+                          : 'border-zinc-300 text-zinc-600 hover:border-zinc-400'
                       }`}
                     >
                       <input
@@ -303,7 +303,7 @@ export default function IntakeForm() {
 
             {/* Timeline */}
             <div className="space-y-1.5">
-              <label className="block text-xs font-medium text-zinc-300 tracking-wide uppercase">
+              <label className="block text-xs font-medium text-zinc-700 tracking-wide uppercase">
                 Where Are You in the Process?<RequiredMark />
               </label>
               <select
@@ -313,26 +313,26 @@ export default function IntakeForm() {
                 disabled={status === 'loading'}
                 style={inputTransition}
                 className={`${inputBase} appearance-none cursor-pointer ${
-                  errors.timeline ? 'border-red-500/60' : 'border-zinc-600 focus:border-amber-500/70'
-                } ${!form.timeline ? 'text-zinc-500' : ''}`}
+                  errors.timeline ? 'border-red-400' : 'border-zinc-300 focus:border-amber-500'
+                } ${!form.timeline ? 'text-zinc-400' : ''}`}
               >
                 <option value="" disabled>
                   Select your stage
                 </option>
                 {timelines.map((t) => (
-                  <option key={t} value={t} className="text-zinc-100 bg-zinc-900">
+                  <option key={t} value={t}>
                     {t}
                   </option>
                 ))}
               </select>
-              {errors.timeline && <p className="text-xs text-red-400">{errors.timeline}</p>}
+              {errors.timeline && <p className="text-xs text-red-500">{errors.timeline}</p>}
             </div>
 
             {/* Error state */}
             {status === 'error' && (
-              <div className="flex items-start gap-3 p-4 border border-red-500/30 bg-red-500/5">
-                <Warning size={16} className="text-red-400 shrink-0 mt-0.5" />
-                <p className="text-sm text-red-300">{errorMessage}</p>
+              <div className="flex items-start gap-3 p-4 border border-red-300 bg-red-50">
+                <Warning size={16} className="text-red-500 shrink-0 mt-0.5" />
+                <p className="text-sm text-red-600">{errorMessage}</p>
               </div>
             )}
 
@@ -344,7 +344,7 @@ export default function IntakeForm() {
                 transition:
                   'background-color 150ms ease, transform 160ms cubic-bezier(0.23, 1, 0.32, 1)',
               }}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 active:scale-[0.97] disabled:opacity-60 disabled:cursor-not-allowed text-zinc-950 font-semibold text-sm px-8 py-3.5"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-600 active:scale-[0.97] disabled:opacity-60 disabled:cursor-not-allowed text-zinc-950 font-semibold text-sm px-8 py-3.5"
             >
               {status === 'loading' ? (
                 <>
@@ -359,9 +359,9 @@ export default function IntakeForm() {
               )}
             </button>
 
-            <p className="text-xs text-zinc-500">
+            <p className="text-xs text-zinc-400">
               We don&apos;t share your information. Quote arrives within 24 hours on business days.
-              <span className="ml-2 text-zinc-600">
+              <span className="ml-2 text-zinc-400">
                 <RequiredMark /> Required fields
               </span>
             </p>

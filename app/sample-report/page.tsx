@@ -17,10 +17,10 @@ export const metadata: Metadata = {
 function SectionHeader({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div className="mb-6">
-      <div className="font-mono text-[10px] text-amber-500/80 tracking-[0.2em] uppercase mb-2">
+      <div className="font-mono text-[10px] text-amber-600 tracking-[0.2em] uppercase mb-2">
         {label}
       </div>
-      <h2 className="text-lg font-bold text-zinc-100 tracking-tight">{children}</h2>
+      <h2 className="text-lg font-bold text-zinc-900 tracking-tight">{children}</h2>
     </div>
   )
 }
@@ -44,15 +44,15 @@ function DataRow({
 }) {
   return (
     <div
-      className={`flex justify-between gap-8 py-2 ${borderTop ? 'border-t border-zinc-700/60 mt-1 pt-3' : ''}`}
+      className={`flex justify-between gap-8 py-2 ${borderTop ? 'border-t border-zinc-200 mt-1 pt-3' : ''}`}
     >
       <span
-        className={`text-sm leading-snug ${indent ? 'pl-4' : ''} ${muted ? 'text-zinc-500' : highlight ? 'text-zinc-100 font-semibold' : 'text-zinc-300'}`}
+        className={`text-sm leading-snug ${indent ? 'pl-4' : ''} ${muted ? 'text-zinc-400' : highlight ? 'text-zinc-900 font-semibold' : 'text-zinc-600'}`}
       >
         {label}
       </span>
       <span
-        className={`text-sm font-mono tabular-nums shrink-0 ${highlight ? 'text-amber-400 font-semibold' : negative ? 'text-red-400' : muted ? 'text-zinc-500' : 'text-zinc-100'}`}
+        className={`text-sm font-mono tabular-nums shrink-0 ${highlight ? 'text-amber-600 font-semibold' : negative ? 'text-red-500' : muted ? 'text-zinc-400' : 'text-zinc-900'}`}
       >
         {value}
       </span>
@@ -62,13 +62,13 @@ function DataRow({
 
 function RedFlag({ title, detail }: { title: string; detail: string }) {
   return (
-    <div className="flex items-start gap-4 py-4 border-t border-zinc-700/60">
-      <div className="shrink-0 w-8 h-8 flex items-center justify-center border border-amber-500/40 bg-amber-500/5">
-        <Warning size={14} weight="fill" className="text-amber-500" />
+    <div className="flex items-start gap-4 py-4 border-t border-zinc-200">
+      <div className="shrink-0 w-8 h-8 flex items-center justify-center border border-amber-300 bg-amber-50">
+        <Warning size={14} weight="fill" className="text-amber-600" />
       </div>
       <div>
-        <div className="text-sm font-semibold text-zinc-100">{title}</div>
-        <p className="mt-1 text-sm text-zinc-400 leading-relaxed">{detail}</p>
+        <div className="text-sm font-semibold text-zinc-900">{title}</div>
+        <p className="mt-1 text-sm text-zinc-600 leading-relaxed">{detail}</p>
       </div>
     </div>
   )
@@ -80,24 +80,24 @@ export default function SampleReportPage() {
       <Nav />
 
       {/* Page header */}
-      <section className="blueprint-grid pt-16 pb-12 border-b border-zinc-700/60">
+      <section className="blueprint-grid pt-16 pb-12 border-b border-zinc-200">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="animate-fade-up animate-delay-100">
-            <span className="font-mono text-[11px] text-amber-500 tracking-[0.2em] uppercase">
+            <span className="font-mono text-[11px] text-amber-600 tracking-[0.2em] uppercase">
               / Sample Report
             </span>
           </div>
-          <h1 className="mt-5 text-3xl md:text-4xl font-bold tracking-tight animate-fade-up animate-delay-200 max-w-2xl">
+          <h1 className="mt-5 text-3xl md:text-4xl font-bold tracking-tight animate-fade-up animate-delay-200 max-w-2xl text-zinc-900">
             This is what you get.
           </h1>
-          <p className="mt-4 text-zinc-300 text-base leading-relaxed max-w-xl animate-fade-up animate-delay-300">
+          <p className="mt-4 text-zinc-600 text-base leading-relaxed max-w-xl animate-fade-up animate-delay-300">
             A real-format Quality of Earnings report on a fictional HVAC acquisition. The
             structure, depth, and findings are representative of what a Footings report
             looks like in practice.
           </p>
-          <div className="mt-6 inline-flex items-center gap-2 px-3 py-1.5 border border-amber-500/30 bg-amber-500/5 animate-fade-up animate-delay-400">
-            <Warning size={12} weight="fill" className="text-amber-500/80 shrink-0" />
-            <span className="text-xs text-amber-400/80 font-mono">
+          <div className="mt-6 inline-flex items-center gap-2 px-3 py-1.5 border border-amber-300 bg-amber-50 animate-fade-up animate-delay-400">
+            <Warning size={12} weight="fill" className="text-amber-600 shrink-0" />
+            <span className="text-xs text-amber-700 font-mono">
               All company names, figures, and individuals are fictional.
             </span>
           </div>
@@ -109,9 +109,9 @@ export default function SampleReportPage() {
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
 
           {/* Report cover */}
-          <div className="border border-zinc-700 bg-zinc-900 mb-12">
-            {/* Header bar */}
-            <div className="bg-zinc-800 px-8 py-4 flex items-center justify-between border-b border-zinc-700">
+          <div className="border border-zinc-200 bg-white mb-12 shadow-[0_4px_24px_rgba(0,0,0,0.06)]">
+            {/* Header bar — dark for document authority */}
+            <div className="bg-zinc-900 px-8 py-4 flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <span className="font-mono text-sm tracking-[0.2em] text-zinc-100 uppercase font-semibold">
                   Footings
@@ -122,14 +122,14 @@ export default function SampleReportPage() {
             </div>
 
             <div className="p-8 md:p-12">
-              <div className="font-mono text-[10px] text-amber-500 tracking-[0.2em] uppercase mb-4">
+              <div className="font-mono text-[10px] text-amber-600 tracking-[0.2em] uppercase mb-4">
                 Quality of Earnings Report
               </div>
-              <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-zinc-100 mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-zinc-900 mb-8">
                 Apex HVAC Services, LLC
               </h2>
 
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-6 border-t border-zinc-700/60">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-6 border-t border-zinc-200">
                 {[
                   { label: 'Report Date', value: 'November 2024' },
                   { label: 'Asking Price', value: '$3,800,000' },
@@ -137,10 +137,10 @@ export default function SampleReportPage() {
                   { label: 'Prepared For', value: 'Buyer (Confidential)' },
                 ].map((item) => (
                   <div key={item.label}>
-                    <div className="text-[10px] font-mono text-zinc-500 tracking-widest uppercase mb-1">
+                    <div className="text-[10px] font-mono text-zinc-400 tracking-widest uppercase mb-1">
                       {item.label}
                     </div>
-                    <div className="text-sm font-semibold text-zinc-100">{item.value}</div>
+                    <div className="text-sm font-semibold text-zinc-900">{item.value}</div>
                   </div>
                 ))}
               </div>
@@ -148,7 +148,7 @@ export default function SampleReportPage() {
           </div>
 
           {/* Executive Summary */}
-          <div className="mb-8 pb-5 border-b border-zinc-700/60">
+          <div className="mb-8 pb-5 border-b border-zinc-200">
             <SectionHeader label="Section 01">Executive Summary</SectionHeader>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
               {[
@@ -168,26 +168,26 @@ export default function SampleReportPage() {
               ].map((item) => (
                 <div
                   key={item.label}
-                  className={`p-5 border ${item.amber ? 'border-amber-500/30 bg-amber-500/5' : item.red ? 'border-red-500/20 bg-red-500/5' : 'border-zinc-700 bg-zinc-900'}`}
+                  className={`p-5 border ${item.amber ? 'border-amber-300 bg-amber-50' : item.red ? 'border-red-200 bg-red-50' : 'border-zinc-200 bg-zinc-50'}`}
                 >
-                  <div className="text-[10px] font-mono text-zinc-500 tracking-widest uppercase mb-2">
+                  <div className="text-[10px] font-mono text-zinc-400 tracking-widest uppercase mb-2">
                     {item.label}
                   </div>
                   <div
-                    className={`font-mono text-2xl font-semibold tabular-nums ${item.amber ? 'text-amber-400' : item.red ? 'text-red-400' : 'text-zinc-100'}`}
+                    className={`font-mono text-2xl font-semibold tabular-nums ${item.amber ? 'text-amber-600' : item.red ? 'text-red-500' : 'text-zinc-900'}`}
                   >
                     {item.value}
                   </div>
-                  <div className="mt-1 text-xs text-zinc-500">{item.note}</div>
+                  <div className="mt-1 text-xs text-zinc-400">{item.note}</div>
                 </div>
               ))}
             </div>
 
-            <div className="p-5 border border-zinc-700/60 bg-zinc-900/40">
-              <div className="text-[10px] font-mono text-zinc-500 tracking-widest uppercase mb-3">
+            <div className="p-5 border border-zinc-200 bg-zinc-50">
+              <div className="text-[10px] font-mono text-zinc-400 tracking-widest uppercase mb-3">
                 Summary Finding
               </div>
-              <p className="text-[15px] text-zinc-300 leading-relaxed">
+              <p className="text-[15px] text-zinc-700 leading-relaxed">
                 Apex HVAC Services presents adjusted EBITDA of $612,193, a reduction of $235,100
                 from the seller-stated figure of $847,293. The primary drivers are owner
                 compensation recast ($124,500), elimination of non-recurring equipment disposal
@@ -200,18 +200,18 @@ export default function SampleReportPage() {
           </div>
 
           {/* EBITDA Normalization */}
-          <div className="mb-8 pb-5 border-b border-zinc-700/60">
+          <div className="mb-8 pb-5 border-b border-zinc-200">
             <SectionHeader label="Section 02">EBITDA Normalization</SectionHeader>
-            <p className="text-[15px] text-zinc-400 leading-relaxed mb-8">
+            <p className="text-[15px] text-zinc-500 leading-relaxed mb-8">
               The following schedule normalizes the seller-stated EBITDA by removing non-recurring
               items, personal expenses, and add-backs that do not represent sustainable business
               earnings. Each adjustment is documented with source and rationale.
             </p>
 
-            <div className="border border-zinc-700 bg-zinc-900 p-6 space-y-1">
+            <div className="border border-zinc-200 bg-white p-6 space-y-1 shadow-sm">
               <DataRow label="Seller-Stated EBITDA (FY2023)" value="$847,293" />
               <div className="pt-3 pb-1">
-                <div className="text-[10px] font-mono text-zinc-500 tracking-widest uppercase mb-3">
+                <div className="text-[10px] font-mono text-zinc-400 tracking-widest uppercase mb-3">
                   Adjustments — Additions to Income
                 </div>
               </div>
@@ -230,7 +230,7 @@ export default function SampleReportPage() {
                 negative
               />
               <div className="pt-3 pb-1">
-                <div className="text-[10px] font-mono text-zinc-500 tracking-widest uppercase mb-3">
+                <div className="text-[10px] font-mono text-zinc-400 tracking-widest uppercase mb-3">
                   Adjustments — Non-Recurring Revenue
                 </div>
               </div>
@@ -267,21 +267,21 @@ export default function SampleReportPage() {
             </div>
 
             <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="p-4 border border-zinc-700/60 bg-zinc-900/40">
-                <div className="text-xs font-mono text-zinc-500 tracking-widest uppercase mb-2">
+              <div className="p-4 border border-zinc-200 bg-zinc-50">
+                <div className="text-xs font-mono text-zinc-400 tracking-widest uppercase mb-2">
                   Implied Multiple (Stated)
                 </div>
-                <div className="font-mono text-2xl text-zinc-100 font-semibold">4.5×</div>
-                <div className="mt-1 text-xs text-zinc-500">
+                <div className="font-mono text-2xl text-zinc-900 font-semibold">4.5×</div>
+                <div className="mt-1 text-xs text-zinc-400">
                   $3,800,000 ÷ $847,293
                 </div>
               </div>
-              <div className="p-4 border border-amber-500/30 bg-amber-500/5">
-                <div className="text-xs font-mono text-zinc-500 tracking-widest uppercase mb-2">
+              <div className="p-4 border border-amber-300 bg-amber-50">
+                <div className="text-xs font-mono text-zinc-400 tracking-widest uppercase mb-2">
                   Implied Multiple (Adjusted)
                 </div>
-                <div className="font-mono text-2xl text-amber-400 font-semibold">6.2×</div>
-                <div className="mt-1 text-xs text-zinc-500">
+                <div className="font-mono text-2xl text-amber-600 font-semibold">6.2×</div>
+                <div className="mt-1 text-xs text-zinc-400">
                   $3,800,000 ÷ $612,193
                 </div>
               </div>
@@ -289,17 +289,17 @@ export default function SampleReportPage() {
           </div>
 
           {/* Working Capital */}
-          <div className="mb-8 pb-5 border-b border-zinc-700/60">
+          <div className="mb-8 pb-5 border-b border-zinc-200">
             <SectionHeader label="Section 03">Working Capital Analysis</SectionHeader>
-            <p className="text-[15px] text-zinc-400 leading-relaxed mb-8">
+            <p className="text-[15px] text-zinc-500 leading-relaxed mb-8">
               Working capital represents the net short-term assets required for the business to
               operate day-to-day. A working capital peg should be negotiated to ensure the
               business is delivered with sufficient liquidity to operate without immediate
               capital injection.
             </p>
 
-            <div className="border border-zinc-700 bg-zinc-900 p-6 mb-6">
-              <div className="text-[10px] font-mono text-zinc-500 tracking-widest uppercase mb-4">
+            <div className="border border-zinc-200 bg-white p-6 mb-6 shadow-sm">
+              <div className="text-[10px] font-mono text-zinc-400 tracking-widest uppercase mb-4">
                 Net Working Capital at Close (Estimated)
               </div>
               <DataRow label="Accounts Receivable (net)" value="$312,400" />
@@ -314,12 +314,12 @@ export default function SampleReportPage() {
               <DataRow label="Net Working Capital" value="$129,100" highlight borderTop />
             </div>
 
-            <div className="p-5 border border-amber-500/30 bg-amber-500/5">
-              <div className="text-[10px] font-mono text-amber-500/80 tracking-widest uppercase mb-3">
+            <div className="p-5 border border-amber-300 bg-amber-50">
+              <div className="text-[10px] font-mono text-amber-600 tracking-widest uppercase mb-3">
                 Recommendation
               </div>
-              <p className="text-sm text-zinc-300 leading-relaxed">
-                Negotiate a working capital peg of <strong className="text-zinc-100">$125,000</strong> as
+              <p className="text-sm text-zinc-700 leading-relaxed">
+                Negotiate a working capital peg of <strong className="text-zinc-900">$125,000</strong> as
                 a closing condition. If NWC at close falls below this peg, the purchase price
                 should be reduced dollar-for-dollar. This protects against the seller timing
                 the close to drain receivables or build payables. The trailing 12-month average
@@ -329,15 +329,15 @@ export default function SampleReportPage() {
           </div>
 
           {/* Customer Concentration */}
-          <div className="mb-8 pb-5 border-b border-zinc-700/60">
+          <div className="mb-8 pb-5 border-b border-zinc-200">
             <SectionHeader label="Section 04">Customer Concentration</SectionHeader>
-            <p className="text-[15px] text-zinc-400 leading-relaxed mb-8">
+            <p className="text-[15px] text-zinc-500 leading-relaxed mb-8">
               Customer concentration represents a risk to revenue sustainability post-close.
               The following summarizes the top customers by revenue for FY2023.
             </p>
 
-            <div className="border border-zinc-700 bg-zinc-900 overflow-hidden">
-              <div className="px-6 py-3 bg-zinc-800 border-b border-zinc-700 grid grid-cols-[1fr_auto_auto] gap-6">
+            <div className="border border-zinc-200 bg-white overflow-hidden shadow-sm">
+              <div className="px-6 py-3 bg-zinc-50 border-b border-zinc-200 grid grid-cols-[1fr_auto_auto] gap-6">
                 <div className="text-[10px] font-mono text-zinc-400 tracking-widest uppercase">Customer</div>
                 <div className="text-[10px] font-mono text-zinc-400 tracking-widest uppercase text-right">Revenue</div>
                 <div className="text-[10px] font-mono text-zinc-400 tracking-widest uppercase text-right">% of Total</div>
@@ -350,17 +350,17 @@ export default function SampleReportPage() {
               ].map((row, i) => (
                 <div
                   key={i}
-                  className={`px-6 py-3.5 border-t border-zinc-700/60 grid grid-cols-[1fr_auto_auto] gap-6 ${row.flag ? 'bg-red-500/5' : ''}`}
+                  className={`px-6 py-3.5 border-t border-zinc-200 grid grid-cols-[1fr_auto_auto] gap-6 ${row.flag ? 'bg-red-50' : ''}`}
                 >
                   <div className="flex items-center gap-2">
-                    <span className="text-sm text-zinc-200">{row.name}</span>
+                    <span className="text-sm text-zinc-800">{row.name}</span>
                     {row.flag && (
                       <Warning size={12} weight="fill" className="text-amber-500 shrink-0" />
                     )}
                   </div>
-                  <div className="font-mono text-sm text-zinc-100 text-right">{row.rev}</div>
+                  <div className="font-mono text-sm text-zinc-900 text-right">{row.rev}</div>
                   <div
-                    className={`font-mono text-sm text-right font-medium ${row.flag ? 'text-red-400' : 'text-zinc-300'}`}
+                    className={`font-mono text-sm text-right font-medium ${row.flag ? 'text-red-500' : 'text-zinc-600'}`}
                   >
                     {row.pct}
                   </div>
@@ -368,9 +368,9 @@ export default function SampleReportPage() {
               ))}
             </div>
 
-            <div className="mt-4 p-4 border border-red-500/20 bg-red-500/5">
-              <p className="text-sm text-zinc-300 leading-relaxed">
-                <span className="text-zinc-100 font-medium">Risk:</span> Pinnacle Property
+            <div className="mt-4 p-4 border border-red-200 bg-red-50">
+              <p className="text-sm text-zinc-700 leading-relaxed">
+                <span className="text-zinc-900 font-medium">Risk:</span> Pinnacle Property
                 Management represents 34.2% of FY2023 revenue and has a month-to-month service
                 agreement that is not transferable without their written consent. Buyer should
                 require a consent-to-assign and multi-year renewal from Pinnacle as a condition
@@ -380,9 +380,9 @@ export default function SampleReportPage() {
           </div>
 
           {/* Red Flags */}
-          <div className="mb-8 pb-5 border-b border-zinc-700/60">
+          <div className="mb-8 pb-5 border-b border-zinc-200">
             <SectionHeader label="Section 05">Red Flags</SectionHeader>
-            <p className="text-[15px] text-zinc-400 leading-relaxed mb-8">
+            <p className="text-[15px] text-zinc-500 leading-relaxed mb-8">
               The following issues were identified during our analysis. Each represents a deal
               risk that should be addressed prior to close, either through negotiation, additional
               diligence, or price adjustment.
@@ -405,23 +405,23 @@ export default function SampleReportPage() {
                 title="Service contract liability not properly reflected"
                 detail="The business carries $28,700 in deferred revenue from annual service contracts. These represent future labor obligations that reduce near-term free cash flow and must be included in the working capital calculation."
               />
-              <div className="border-t border-zinc-700/60" />
+              <div className="border-t border-zinc-200" />
             </div>
           </div>
 
           {/* Recommendations */}
-          <div className="mb-8 pb-5 border-b border-zinc-700/60">
+          <div className="mb-8 pb-5 border-b border-zinc-200">
             <SectionHeader label="Section 06">Recommendations</SectionHeader>
 
             <div className="space-y-4">
-              <div className="p-5 border border-amber-500/30 bg-amber-500/5">
-                <div className="text-[10px] font-mono text-amber-500/80 tracking-widest uppercase mb-3">
+              <div className="p-5 border border-amber-300 bg-amber-50">
+                <div className="text-[10px] font-mono text-amber-600 tracking-widest uppercase mb-3">
                   Recommended Action: Renegotiate
                 </div>
-                <p className="text-sm text-zinc-300 leading-relaxed">
+                <p className="text-sm text-zinc-700 leading-relaxed">
                   The business does not support the $3,800,000 asking price at adjusted earnings.
                   Based on a 4.0–4.5× multiple on adjusted EBITDA of $612,193, a supportable
-                  purchase price range is <strong className="text-zinc-100">$2,449,000–$2,755,000</strong> —
+                  purchase price range is <strong className="text-zinc-900">$2,449,000–$2,755,000</strong> —
                   a reduction of $1,045,000–$1,351,000 from the asking price.
                 </p>
               </div>
@@ -444,26 +444,26 @@ export default function SampleReportPage() {
                   body: 'Tie a portion of the seller purchase price (15–20%) to 12-month revenue retention to protect against owner-dependent account churn.',
                 },
               ].map((item, i) => (
-                <div key={i} className="flex items-start gap-4 py-4 border-t border-zinc-700/60">
-                  <span className="font-mono text-xs text-amber-500 shrink-0 mt-0.5">
+                <div key={i} className="flex items-start gap-4 py-4 border-t border-zinc-200">
+                  <span className="font-mono text-xs text-amber-600 shrink-0 mt-0.5">
                     {String(i + 1).padStart(2, '0')}
                   </span>
                   <div>
-                    <div className="text-sm font-semibold text-zinc-100">{item.title}</div>
-                    <p className="mt-1 text-sm text-zinc-400 leading-relaxed">{item.body}</p>
+                    <div className="text-sm font-semibold text-zinc-900">{item.title}</div>
+                    <p className="mt-1 text-sm text-zinc-500 leading-relaxed">{item.body}</p>
                   </div>
                 </div>
               ))}
-              <div className="border-t border-zinc-700/60" />
+              <div className="border-t border-zinc-200" />
             </div>
           </div>
 
           {/* Disclaimer */}
-          <div className="p-6 border border-zinc-700/60 bg-zinc-900/40">
-            <div className="text-[10px] font-mono text-zinc-500 tracking-widest uppercase mb-3">
+          <div className="p-6 border border-zinc-200 bg-zinc-50">
+            <div className="text-[10px] font-mono text-zinc-400 tracking-widest uppercase mb-3">
               Disclaimer
             </div>
-            <p className="text-xs text-zinc-500 leading-relaxed">
+            <p className="text-xs text-zinc-400 leading-relaxed">
               This report is prepared for buyer advisory purposes only and does not constitute a
               legal opinion, tax advice, or a certified audit. Footings Financial is not a licensed
               CPA firm. This analysis is based solely on documents provided by the seller and is
@@ -476,15 +476,15 @@ export default function SampleReportPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 border-t border-zinc-700/60 bg-zinc-900/40">
+      <section className="py-20 border-t border-zinc-200 bg-zinc-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <span className="font-mono text-[11px] text-amber-500 tracking-[0.2em] uppercase">
+          <span className="font-mono text-[11px] text-amber-600 tracking-[0.2em] uppercase">
             / Ready to Start?
           </span>
-          <h2 className="mt-4 text-2xl md:text-3xl font-bold tracking-tight max-w-xl mx-auto">
+          <h2 className="mt-4 text-2xl md:text-3xl font-bold tracking-tight max-w-xl mx-auto text-zinc-900">
             Your deal deserves the same scrutiny — in 5–7 days.
           </h2>
-          <p className="mt-4 text-zinc-300 leading-relaxed max-w-md mx-auto">
+          <p className="mt-4 text-zinc-600 leading-relaxed max-w-md mx-auto">
             Submit your deal details and get a fixed-fee quote within 24 hours.
           </p>
           <div className="mt-8">
@@ -494,7 +494,7 @@ export default function SampleReportPage() {
                 transition:
                   'background-color 150ms ease, transform 160ms cubic-bezier(0.23, 1, 0.32, 1)',
               }}
-              className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 active:scale-[0.97] text-zinc-950 font-semibold text-sm px-8 py-3.5"
+              className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 active:scale-[0.97] text-zinc-950 font-semibold text-sm px-8 py-3.5"
             >
               Get a Quote
               <ArrowRight weight="bold" size={15} />

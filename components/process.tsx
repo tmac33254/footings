@@ -25,30 +25,25 @@ const steps = [
 
 export default function Process() {
   return (
-    <section className="py-24 border-t border-zinc-700/60">
+    <section className="py-24 border-t border-zinc-200">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <AnimateIn>
-          <span className="font-mono text-[11px] text-amber-500 tracking-[0.2em] uppercase">
+          <span className="font-mono text-[11px] text-amber-600 tracking-[0.2em] uppercase">
             / The Process
           </span>
-          <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight">
+          <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-zinc-900">
             Four steps from LOI to answers.
           </h2>
         </AnimateIn>
 
         {/* Desktop: horizontal timeline */}
         <div className="hidden md:grid md:grid-cols-4 gap-6 mt-16">
-          {/* Connector line sits behind the cards */}
-          <div
-            className="col-span-4 row-start-1 col-start-1 relative"
-            style={{ gridRow: 1, gridColumn: '1 / -1' }}
-          />
           {steps.map((step, i) => (
             <AnimateIn key={step.number} delay={i * 100}>
               <div className="relative group">
                 {/* Decorative background number */}
                 <div
-                  className="absolute -top-6 -left-1 font-mono font-bold text-zinc-800/50 leading-none pointer-events-none select-none"
+                  className="absolute -top-6 -left-1 font-mono font-bold text-zinc-200 leading-none pointer-events-none select-none"
                   style={{ fontSize: 'clamp(5rem, 8vw, 7rem)' }}
                   aria-hidden="true"
                 >
@@ -61,13 +56,13 @@ export default function Process() {
                   <div className="flex items-center gap-3 mb-5">
                     <div className="w-2 h-2 rounded-full bg-amber-500 shrink-0" />
                     {i < steps.length - 1 && (
-                      <div className="flex-1 h-px bg-zinc-700/60" />
+                      <div className="flex-1 h-px bg-zinc-200" />
                     )}
                   </div>
-                  <div className="text-base font-semibold text-zinc-100 leading-snug">
+                  <div className="text-base font-semibold text-zinc-900 leading-snug">
                     {step.title}
                   </div>
-                  <p className="mt-2.5 text-[13px] text-zinc-400 leading-relaxed">
+                  <p className="mt-2.5 text-[13px] text-zinc-500 leading-relaxed">
                     {step.body}
                   </p>
                 </div>
@@ -82,18 +77,18 @@ export default function Process() {
             <AnimateIn key={step.number} delay={i * 80}>
               <div className="relative flex gap-5 pb-10">
                 {i < steps.length - 1 && (
-                  <div className="absolute left-3.5 top-8 bottom-0 w-px bg-zinc-700/60" />
+                  <div className="absolute left-3.5 top-8 bottom-0 w-px bg-zinc-200" />
                 )}
                 {/* Node */}
-                <div className="relative z-10 w-7 h-7 shrink-0 flex items-center justify-center rounded-full border border-zinc-700 bg-zinc-950">
+                <div className="relative z-10 w-7 h-7 shrink-0 flex items-center justify-center rounded-full border border-zinc-200 bg-white shadow-sm">
                   <div className="w-1.5 h-1.5 rounded-full bg-amber-500" />
                 </div>
                 <div className="pt-0.5">
-                  <div className="font-mono text-[10px] text-zinc-600 tracking-widest mb-1">
+                  <div className="font-mono text-[10px] text-zinc-400 tracking-widest mb-1">
                     {step.number}
                   </div>
-                  <div className="text-sm font-semibold text-zinc-100">{step.title}</div>
-                  <p className="mt-2 text-[13px] text-zinc-400 leading-relaxed">{step.body}</p>
+                  <div className="text-sm font-semibold text-zinc-900">{step.title}</div>
+                  <p className="mt-2 text-[13px] text-zinc-500 leading-relaxed">{step.body}</p>
                 </div>
               </div>
             </AnimateIn>

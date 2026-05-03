@@ -42,7 +42,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false)
 
   return (
-    <div className="border-t border-zinc-700/60">
+    <div className="border-t border-zinc-200">
       <button
         onClick={() => setOpen(!open)}
         className="w-full flex items-start justify-between gap-6 py-5 text-left group"
@@ -50,7 +50,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
       >
         <span
           style={{ transition: 'color 150ms ease' }}
-          className="text-[15px] font-medium text-zinc-200 group-hover:text-zinc-100 leading-snug"
+          className="text-[15px] font-medium text-zinc-800 group-hover:text-zinc-900 leading-snug"
         >
           {q}
         </span>
@@ -73,7 +73,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
         <div style={{ overflow: 'hidden' }}>
           <p
             style={{ transition: 'opacity 200ms ease' }}
-            className={`pb-6 text-[14px] text-zinc-300 leading-relaxed max-w-3xl ${
+            className={`pb-6 text-[14px] text-zinc-600 leading-relaxed max-w-3xl ${
               open ? 'opacity-100' : 'opacity-0'
             }`}
           >
@@ -87,15 +87,15 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 
 export default function Faq() {
   return (
-    <section id="faq" className="py-24 border-t border-zinc-700/60">
+    <section id="faq" className="py-24 border-t border-zinc-200">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-12 lg:gap-20">
           {/* Left: label */}
           <div>
-            <span className="font-mono text-[11px] text-amber-500 tracking-[0.2em] uppercase">
+            <span className="font-mono text-[11px] text-amber-600 tracking-[0.2em] uppercase">
               / FAQ
             </span>
-            <h2 className="mt-4 text-3xl font-bold tracking-tight">
+            <h2 className="mt-4 text-3xl font-bold tracking-tight text-zinc-900">
               Questions worth asking before you wire the money.
             </h2>
           </div>
@@ -105,7 +105,7 @@ export default function Faq() {
             {faqs.map((item) => (
               <FaqItem key={item.q} q={item.q} a={item.a} />
             ))}
-            <div className="border-t border-zinc-700/60" />
+            <div className="border-t border-zinc-200" />
           </div>
         </div>
       </div>

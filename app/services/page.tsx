@@ -89,18 +89,18 @@ export default function ServicesPage() {
       <Nav />
 
       {/* Page hero */}
-      <section className="blueprint-grid pt-24 pb-16 border-b border-zinc-700/60">
+      <section className="blueprint-grid pt-24 pb-16 border-b border-zinc-200">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="animate-fade-up animate-delay-100">
-            <span className="font-mono text-[11px] text-amber-500 tracking-[0.2em] uppercase">
+            <span className="font-mono text-[11px] text-amber-600 tracking-[0.2em] uppercase">
               / Services
             </span>
           </div>
-          <h1 className="mt-5 text-4xl md:text-5xl font-bold tracking-tight leading-[1.05] animate-fade-up animate-delay-200 max-w-2xl">
+          <h1 className="mt-5 text-4xl md:text-5xl font-bold tracking-tight leading-[1.05] animate-fade-up animate-delay-200 max-w-2xl text-zinc-900">
             Two services. One focus:{' '}
             <span className="text-amber-500">protecting buyers.</span>
           </h1>
-          <p className="mt-5 text-zinc-300 text-lg leading-relaxed max-w-xl animate-fade-up animate-delay-300">
+          <p className="mt-5 text-zinc-600 text-lg leading-relaxed max-w-xl animate-fade-up animate-delay-300">
             We do pre-close due diligence and post-close financial management. That&apos;s it.
             No tax prep. No bookkeeping for businesses we didn&apos;t vet. No seller work.
           </p>
@@ -108,39 +108,39 @@ export default function ServicesPage() {
       </section>
 
       {/* QoE Service */}
-      <section id="qoe" className="py-24 border-b border-zinc-700/60">
+      <section id="qoe" className="py-24 border-b border-zinc-200">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-16 lg:gap-24 items-start">
             <AnimateIn>
-              <span className="font-mono text-[11px] text-amber-500 tracking-[0.2em] uppercase">
+              <span className="font-mono text-[11px] text-amber-600 tracking-[0.2em] uppercase">
                 / Service 01
               </span>
-              <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight">
+              <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-zinc-900">
                 Quality of Earnings Report
               </h2>
-              <p className="mt-5 text-zinc-300 leading-relaxed">
+              <p className="mt-5 text-zinc-600 leading-relaxed">
                 A buy-side QoE is the same type of analysis institutional buyers pay $25,000–$60,000
                 for at large accounting firms. We do it for small trades deals at a price that
                 actually makes sense for the acquisition size.
               </p>
-              <p className="mt-4 text-zinc-300 leading-relaxed">
+              <p className="mt-4 text-zinc-600 leading-relaxed">
                 The report normalizes the financials, flags what to push back on, and
                 hands you a clear picture of what you&apos;re actually buying — before you sign
                 anything.
               </p>
 
-              <div className="mt-10 border border-zinc-700 p-6 space-y-4">
+              <div className="mt-10 border border-zinc-200 bg-white p-6 space-y-4 shadow-sm">
                 <div className="flex items-end gap-3">
-                  <span className="font-mono text-3xl font-semibold text-zinc-100 tabular-nums">
+                  <span className="font-mono text-3xl font-semibold text-zinc-900 tabular-nums">
                     $2,500–$4,000
                   </span>
-                  <span className="text-zinc-400 text-sm pb-0.5">flat fee</span>
+                  <span className="text-zinc-500 text-sm pb-0.5">flat fee</span>
                 </div>
-                <div className="flex items-center gap-2 text-sm text-zinc-300">
-                  <span className="font-mono text-amber-500">5–7</span>
+                <div className="flex items-center gap-2 text-sm text-zinc-700">
+                  <span className="font-mono text-amber-600">5–7</span>
                   <span>business days from receiving financials</span>
                 </div>
-                <div className="border-t border-zinc-700/60 pt-4 text-xs text-zinc-500">
+                <div className="border-t border-zinc-100 pt-4 text-xs text-zinc-400">
                   Price depends on deal complexity and number of entities. Quote within 24 hours
                   of your intake submission.
                 </div>
@@ -152,7 +152,7 @@ export default function ServicesPage() {
                   transition:
                     'background-color 150ms ease, transform 160ms cubic-bezier(0.23, 1, 0.32, 1)',
                 }}
-                className="mt-8 inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 active:scale-[0.97] text-zinc-950 font-semibold text-sm px-6 py-3"
+                className="mt-8 inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 active:scale-[0.97] text-zinc-950 font-semibold text-sm px-6 py-3"
               >
                 Get a Quote
                 <ArrowRight weight="bold" size={15} />
@@ -167,29 +167,29 @@ export default function ServicesPage() {
                   </div>
                   <div className="space-y-0">
                     {qoeDeliverables.map((item, i) => (
-                      <div key={i} className="flex items-start gap-4 py-3.5 border-t border-zinc-700/60">
+                      <div key={i} className="flex items-start gap-4 py-3.5 border-t border-zinc-200">
                         <CheckCircle
                           size={15}
                           weight="fill"
                           className="text-amber-500 shrink-0 mt-0.5"
                         />
-                        <span className="text-[15px] text-zinc-200 leading-snug">{item}</span>
+                        <span className="text-[15px] text-zinc-700 leading-snug">{item}</span>
                       </div>
                     ))}
-                    <div className="border-t border-zinc-700/60" />
+                    <div className="border-t border-zinc-200" />
                   </div>
                 </div>
               </AnimateIn>
 
               <AnimateIn delay={160}>
                 <div>
-                  <div className="text-xs font-mono text-zinc-500 tracking-widest uppercase mb-5">
+                  <div className="text-xs font-mono text-zinc-400 tracking-widest uppercase mb-5">
                     Not Included
                   </div>
                   <div className="space-y-2">
                     {qoeNotIncluded.map((item, i) => (
                       <div key={i} className="flex items-start gap-3">
-                        <span className="text-zinc-600 text-xs mt-1">—</span>
+                        <span className="text-zinc-300 text-xs mt-1">—</span>
                         <span className="text-[14px] text-zinc-500 leading-snug">{item}</span>
                       </div>
                     ))}
@@ -198,9 +198,9 @@ export default function ServicesPage() {
               </AnimateIn>
 
               <AnimateIn delay={200}>
-                <div className="p-4 border border-zinc-700/60 bg-zinc-900/50">
-                  <p className="text-xs text-zinc-400 leading-relaxed">
-                    <span className="text-zinc-200 font-medium">What we need from you:</span> Last
+                <div className="p-4 border border-zinc-200 bg-zinc-50">
+                  <p className="text-xs text-zinc-500 leading-relaxed">
+                    <span className="text-zinc-800 font-medium">What we need from you:</span> Last
                     2–3 years of P&amp;Ls, most recent balance sheet, tax returns if available, and
                     any seller-provided add-back schedules. Partial financials are fine to start.
                   </p>
@@ -212,35 +212,35 @@ export default function ServicesPage() {
       </section>
 
       {/* Fractional CFO Service */}
-      <section id="fractional-cfo" className="py-24 border-b border-zinc-700/60 bg-zinc-900/40">
+      <section id="fractional-cfo" className="py-24 border-b border-zinc-200 bg-zinc-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-16 lg:gap-24 items-start">
             <AnimateIn>
-              <span className="font-mono text-[11px] text-amber-500 tracking-[0.2em] uppercase">
+              <span className="font-mono text-[11px] text-amber-600 tracking-[0.2em] uppercase">
                 / Service 02
               </span>
-              <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight">
+              <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-zinc-900">
                 Fractional CFO — Post-Close
               </h2>
-              <p className="mt-5 text-zinc-300 leading-relaxed">
+              <p className="mt-5 text-zinc-600 leading-relaxed">
                 Closing is the easy part. Running a trades business you didn&apos;t build is
                 harder. Most first-time buyers figure out their books are wrong six months in,
                 when they&apos;ve already made expensive decisions on bad data.
               </p>
-              <p className="mt-4 text-zinc-300 leading-relaxed">
+              <p className="mt-4 text-zinc-600 leading-relaxed">
                 We stay on as your fractional CFO — handling the month-end close, building the
                 dashboards, and making sure every financial decision you make is built on numbers
                 that are actually right.
               </p>
 
-              <div className="mt-10 border border-zinc-700 p-6 space-y-3">
+              <div className="mt-10 border border-zinc-200 bg-white p-6 space-y-3 shadow-sm">
                 <div className="flex items-end gap-3">
-                  <span className="font-mono text-3xl font-semibold text-zinc-100 tabular-nums">
+                  <span className="font-mono text-3xl font-semibold text-zinc-900 tabular-nums">
                     $1,500–$2,500
                   </span>
-                  <span className="text-zinc-400 text-sm pb-0.5">/ month</span>
+                  <span className="text-zinc-500 text-sm pb-0.5">/ month</span>
                 </div>
-                <p className="text-xs text-zinc-500">
+                <p className="text-xs text-zinc-400">
                   Scoped to business complexity. Month-to-month after the first 90 days.
                 </p>
               </div>
@@ -251,7 +251,7 @@ export default function ServicesPage() {
                   transition:
                     'border-color 150ms ease, color 150ms ease, transform 160ms cubic-bezier(0.23, 1, 0.32, 1)',
                 }}
-                className="mt-8 inline-flex items-center gap-2 border border-zinc-600 hover:border-amber-500/60 hover:text-amber-400 text-zinc-200 font-medium text-sm px-6 py-3 active:scale-[0.97]"
+                className="mt-8 inline-flex items-center gap-2 border border-zinc-300 hover:border-amber-500/60 hover:text-amber-600 text-zinc-700 font-medium text-sm px-6 py-3 active:scale-[0.97]"
               >
                 Ask about the retainer
               </a>
@@ -265,20 +265,20 @@ export default function ServicesPage() {
                 {cfoInclusions.map((item, i) => {
                   const Icon = item.icon
                   return (
-                    <div key={i} className="flex items-start gap-5 py-5 border-t border-zinc-700/60">
-                      <div className="shrink-0 w-9 h-9 flex items-center justify-center border border-zinc-700 text-amber-500">
+                    <div key={i} className="flex items-start gap-5 py-5 border-t border-zinc-200">
+                      <div className="shrink-0 w-9 h-9 flex items-center justify-center border border-zinc-200 bg-white text-amber-500 shadow-sm">
                         <Icon size={16} weight="duotone" />
                       </div>
                       <div>
-                        <div className="text-sm font-semibold text-zinc-100">{item.label}</div>
-                        <div className="mt-1 text-sm text-zinc-400 leading-snug">
+                        <div className="text-sm font-semibold text-zinc-900">{item.label}</div>
+                        <div className="mt-1 text-sm text-zinc-500 leading-snug">
                           {item.description}
                         </div>
                       </div>
                     </div>
                   )
                 })}
-                <div className="border-t border-zinc-700/60" />
+                <div className="border-t border-zinc-200" />
               </div>
             </AnimateIn>
           </div>
@@ -286,14 +286,14 @@ export default function ServicesPage() {
       </section>
 
       {/* Services FAQ */}
-      <section className="py-24 border-b border-zinc-700/60">
+      <section className="py-24 border-b border-zinc-200">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.6fr] gap-16 items-start">
             <AnimateIn>
-              <span className="font-mono text-[11px] text-amber-500 tracking-[0.2em] uppercase">
+              <span className="font-mono text-[11px] text-amber-600 tracking-[0.2em] uppercase">
                 / Common Questions
               </span>
-              <h2 className="mt-4 text-2xl md:text-3xl font-bold tracking-tight">
+              <h2 className="mt-4 text-2xl md:text-3xl font-bold tracking-tight text-zinc-900">
                 Before you reach out.
               </h2>
             </AnimateIn>
@@ -301,12 +301,12 @@ export default function ServicesPage() {
             <AnimateIn delay={80}>
               <div className="space-y-0">
                 {faqs.map((item, i) => (
-                  <div key={i} className="py-6 border-t border-zinc-700/60">
-                    <div className="text-base font-semibold text-zinc-100 mb-3">{item.q}</div>
-                    <p className="text-[15px] text-zinc-300 leading-relaxed">{item.a}</p>
+                  <div key={i} className="py-6 border-t border-zinc-200">
+                    <div className="text-base font-semibold text-zinc-900 mb-3">{item.q}</div>
+                    <p className="text-[15px] text-zinc-600 leading-relaxed">{item.a}</p>
                   </div>
                 ))}
-                <div className="border-t border-zinc-700/60" />
+                <div className="border-t border-zinc-200" />
               </div>
             </AnimateIn>
           </div>

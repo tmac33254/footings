@@ -17,22 +17,30 @@
   }
 
   body {
-    background-color: #09090b;
-    color: #f4f4f5;
+    background-color: #FAFAF8;
+    color: #18181B;
   }
 
   ::selection {
-    background-color: rgba(245, 158, 11, 0.25);
-    color: #fef3c7;
+    background-color: rgba(245, 158, 11, 0.15);
+    color: #92400E;
   }
 }
 
 @layer utilities {
+  /* Light dot grid — hero sections and page headers */
   .blueprint-grid {
+    background-image: radial-gradient(circle, #D4D4D8 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  /* Hero: dot grid + faint amber warmth behind text */
+  .hero-bg {
+    background-color: #FAFAF8;
     background-image:
-      linear-gradient(rgba(245, 158, 11, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(245, 158, 11, 0.03) 1px, transparent 1px);
-    background-size: 48px 48px;
+      radial-gradient(ellipse 70% 60% at 15% 50%, rgba(245, 158, 11, 0.055) 0%, transparent 65%),
+      radial-gradient(circle, #D4D4D8 1px, transparent 1px);
+    background-size: 100% 100%, 24px 24px;
   }
 
   .text-balance {

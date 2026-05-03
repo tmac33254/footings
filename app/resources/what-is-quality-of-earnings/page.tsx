@@ -20,12 +20,12 @@ export default function WhatIsQoePage() {
       <Nav />
 
       {/* Article header */}
-      <section className="blueprint-grid pt-20 pb-12 border-b border-zinc-700/60">
+      <section className="blueprint-grid pt-20 pb-12 border-b border-zinc-200">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
           <a
             href="/resources"
             style={{ transition: 'color 150ms ease' }}
-            className="inline-flex items-center gap-2 text-xs text-zinc-500 hover:text-zinc-300 mb-8 group"
+            className="inline-flex items-center gap-2 text-xs text-zinc-400 hover:text-zinc-700 mb-8 group"
           >
             <ArrowLeft
               size={12}
@@ -36,21 +36,21 @@ export default function WhatIsQoePage() {
           </a>
 
           <div className="animate-fade-up animate-delay-100">
-            <span className="font-mono text-[11px] text-amber-500 tracking-[0.2em] uppercase">
+            <span className="font-mono text-[11px] text-amber-600 tracking-[0.2em] uppercase">
               / Due Diligence
             </span>
           </div>
-          <h1 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight leading-[1.1] animate-fade-up animate-delay-200">
+          <h1 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight leading-[1.1] animate-fade-up animate-delay-200 text-zinc-900">
             What Is a Quality of Earnings Report? A Buyer&apos;s Guide
           </h1>
           <div className="mt-5 flex items-center gap-4 animate-fade-up animate-delay-300">
-            <span className="text-sm text-zinc-500">8 min read</span>
-            <span className="text-zinc-700">·</span>
+            <span className="text-sm text-zinc-400">8 min read</span>
+            <span className="text-zinc-200">·</span>
             <div className="flex items-center gap-2">
               {['QoE Basics', 'EBITDA', 'Due Diligence'].map((t) => (
                 <span
                   key={t}
-                  className="text-xs font-mono text-zinc-600 px-2 py-0.5 border border-zinc-800"
+                  className="text-xs font-mono text-zinc-400 px-2 py-0.5 border border-zinc-200"
                 >
                   {t}
                 </span>
@@ -62,10 +62,10 @@ export default function WhatIsQoePage() {
 
       {/* Article body */}
       <article className="py-16">
-        <div className="max-w-3xl mx-auto px-6 lg:px-8 prose-footings">
-          <div className="space-y-8 text-zinc-300 text-[16px] leading-[1.75]">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+          <div className="space-y-8 text-zinc-700 text-[16px] leading-[1.75]">
 
-            <p className="text-zinc-200 text-lg leading-relaxed font-medium">
+            <p className="text-zinc-800 text-lg leading-relaxed font-medium">
               When private equity firms acquire businesses, they spend $25,000–$75,000 on a
               Quality of Earnings report before they sign anything. When individual buyers
               acquire small trades businesses, they usually skip it. That gap is where most
@@ -77,7 +77,7 @@ export default function WhatIsQoePage() {
               for buyers of HVAC, plumbing, roofing, electrical, and other trades businesses.
             </p>
 
-            <h2 className="text-xl font-bold text-zinc-100 tracking-tight mt-12 mb-4">
+            <h2 className="text-xl font-bold text-zinc-900 tracking-tight mt-12 mb-4">
               What a QoE report is (and isn&apos;t)
             </h2>
 
@@ -85,7 +85,7 @@ export default function WhatIsQoePage() {
               A Quality of Earnings report is an independent analysis of a business&apos;s financial
               performance, prepared by a third party for the buyer&apos;s benefit. The central
               question it answers:{' '}
-              <em className="text-zinc-200">
+              <em className="text-zinc-800">
                 does this business actually earn what the seller says it earns?
               </em>
             </p>
@@ -102,14 +102,14 @@ export default function WhatIsQoePage() {
               input; the valuation is the output.
             </p>
 
-            <div className="border-l-2 border-amber-500/60 pl-6 py-2 my-8">
-              <p className="text-zinc-200 text-[15px] leading-relaxed font-medium not-italic">
+            <div className="border-l-2 border-amber-400 pl-6 py-2 my-8">
+              <p className="text-zinc-800 text-[15px] leading-relaxed font-medium not-italic">
                 &ldquo;The QoE answers whether the seller&apos;s EBITDA number is real — not just whether
                 the books were kept correctly.&rdquo;
               </p>
             </div>
 
-            <h2 className="text-xl font-bold text-zinc-100 tracking-tight mt-12 mb-4">
+            <h2 className="text-xl font-bold text-zinc-900 tracking-tight mt-12 mb-4">
               What a QoE report covers
             </h2>
 
@@ -117,7 +117,7 @@ export default function WhatIsQoePage() {
               A thorough QoE covers five areas. Each one catches different types of problems.
             </p>
 
-            <h3 className="text-base font-bold text-zinc-100 mt-8 mb-3">
+            <h3 className="text-base font-bold text-zinc-900 mt-8 mb-3">
               1. EBITDA normalization
             </h3>
             <p>
@@ -141,7 +141,7 @@ export default function WhatIsQoePage() {
               ))}
             </ul>
 
-            <h3 className="text-base font-bold text-zinc-100 mt-8 mb-3">
+            <h3 className="text-base font-bold text-zinc-900 mt-8 mb-3">
               2. Working capital analysis
             </h3>
             <p>
@@ -152,7 +152,7 @@ export default function WhatIsQoePage() {
               build payables before the close date.
             </p>
 
-            <h3 className="text-base font-bold text-zinc-100 mt-8 mb-3">
+            <h3 className="text-base font-bold text-zinc-900 mt-8 mb-3">
               3. Revenue quality and customer concentration
             </h3>
             <p>
@@ -163,7 +163,7 @@ export default function WhatIsQoePage() {
               residential accounts.
             </p>
 
-            <h3 className="text-base font-bold text-zinc-100 mt-8 mb-3">
+            <h3 className="text-base font-bold text-zinc-900 mt-8 mb-3">
               4. Owner dependency
             </h3>
             <p>
@@ -174,7 +174,7 @@ export default function WhatIsQoePage() {
               most significant risk in a small trades acquisition.
             </p>
 
-            <h3 className="text-base font-bold text-zinc-100 mt-8 mb-3">
+            <h3 className="text-base font-bold text-zinc-900 mt-8 mb-3">
               5. Red flags and renegotiation points
             </h3>
             <p>
@@ -184,7 +184,7 @@ export default function WhatIsQoePage() {
               before signing.
             </p>
 
-            <h2 className="text-xl font-bold text-zinc-100 tracking-tight mt-12 mb-4">
+            <h2 className="text-xl font-bold text-zinc-900 tracking-tight mt-12 mb-4">
               Why sellers&apos; numbers are almost always wrong
             </h2>
 
@@ -208,35 +208,35 @@ export default function WhatIsQoePage() {
               That difference changes the value of the business by $720,000 at a 4× multiple.
             </p>
 
-            <div className="bg-zinc-900 border border-zinc-700 p-6 my-8">
-              <div className="text-[10px] font-mono text-zinc-500 tracking-widest uppercase mb-4">
+            <div className="bg-zinc-50 border border-zinc-200 p-6 my-8">
+              <div className="text-[10px] font-mono text-zinc-400 tracking-widest uppercase mb-4">
                 Example
               </div>
               <div className="grid grid-cols-2 gap-4 text-sm">
                 <div>
                   <div className="text-zinc-500 mb-1">Seller-stated EBITDA</div>
-                  <div className="font-mono text-zinc-100 text-xl font-semibold">$400,000</div>
+                  <div className="font-mono text-zinc-900 text-xl font-semibold">$400,000</div>
                 </div>
                 <div>
                   <div className="text-zinc-500 mb-1">Adjusted EBITDA</div>
-                  <div className="font-mono text-amber-400 text-xl font-semibold">$220,000</div>
+                  <div className="font-mono text-amber-600 text-xl font-semibold">$220,000</div>
                 </div>
                 <div>
                   <div className="text-zinc-500 mb-1">Purchase price (4× stated)</div>
-                  <div className="font-mono text-zinc-100">$1,600,000</div>
+                  <div className="font-mono text-zinc-900">$1,600,000</div>
                 </div>
                 <div>
                   <div className="text-zinc-500 mb-1">Supportable price (4× adjusted)</div>
-                  <div className="font-mono text-amber-400">$880,000</div>
+                  <div className="font-mono text-amber-600">$880,000</div>
                 </div>
-                <div className="col-span-2 pt-3 border-t border-zinc-700/60">
+                <div className="col-span-2 pt-3 border-t border-zinc-200">
                   <div className="text-zinc-500 mb-1">Overstatement</div>
-                  <div className="font-mono text-red-400 font-semibold">$720,000</div>
+                  <div className="font-mono text-red-500 font-semibold">$720,000</div>
                 </div>
               </div>
             </div>
 
-            <h2 className="text-xl font-bold text-zinc-100 tracking-tight mt-12 mb-4">
+            <h2 className="text-xl font-bold text-zinc-900 tracking-tight mt-12 mb-4">
               When to get a QoE
             </h2>
 
@@ -258,7 +258,7 @@ export default function WhatIsQoePage() {
               They are rarely fixable after you&apos;ve signed the purchase agreement.
             </p>
 
-            <h2 className="text-xl font-bold text-zinc-100 tracking-tight mt-12 mb-4">
+            <h2 className="text-xl font-bold text-zinc-900 tracking-tight mt-12 mb-4">
               What a QoE costs — and what it saves
             </h2>
 
@@ -276,11 +276,11 @@ export default function WhatIsQoePage() {
               on what you&apos;re actually buying.
             </p>
 
-            <div className="border border-zinc-700/60 p-6 mt-10 bg-zinc-900/40">
-              <div className="text-[10px] font-mono text-zinc-500 tracking-widest uppercase mb-3">
+            <div className="border border-zinc-200 p-6 mt-10 bg-amber-50/60">
+              <div className="text-[10px] font-mono text-zinc-400 tracking-widest uppercase mb-3">
                 Bottom Line
               </div>
-              <p className="text-zinc-300 text-[15px] leading-relaxed">
+              <p className="text-zinc-700 text-[15px] leading-relaxed">
                 A Quality of Earnings report is not optional on a meaningful acquisition — it&apos;s the
                 minimum standard for knowing what you&apos;re buying. For trades businesses specifically,
                 where books are often prepared for tax purposes rather than sale, the gap between
@@ -292,9 +292,9 @@ export default function WhatIsQoePage() {
       </article>
 
       {/* Related articles + CTA */}
-      <section className="py-16 border-t border-zinc-700/60 bg-zinc-900/40">
+      <section className="py-16 border-t border-zinc-200 bg-zinc-50">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
-          <div className="font-mono text-[11px] text-zinc-500 tracking-[0.2em] uppercase mb-6">
+          <div className="font-mono text-[11px] text-zinc-400 tracking-[0.2em] uppercase mb-6">
             Continue Reading
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
@@ -312,15 +312,15 @@ export default function WhatIsQoePage() {
                 key={article.href}
                 href={article.href}
                 style={{ transition: 'border-color 150ms ease' }}
-                className="group p-4 border border-zinc-700/60 hover:border-amber-500/40 block"
+                className="group p-4 border border-zinc-200 hover:border-amber-400/60 bg-white block"
               >
                 <div
                   style={{ transition: 'color 150ms ease' }}
-                  className="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 leading-snug"
+                  className="text-sm font-semibold text-zinc-800 group-hover:text-amber-600 leading-snug"
                 >
                   {article.title}
                 </div>
-                <div className="mt-2 flex items-center gap-1 text-xs text-zinc-500">
+                <div className="mt-2 flex items-center gap-1 text-xs text-zinc-400">
                   Read article
                   <ArrowRight size={10} className="group-hover:translate-x-0.5 transition-transform" />
                 </div>
@@ -328,9 +328,9 @@ export default function WhatIsQoePage() {
             ))}
           </div>
 
-          <div className="border-t border-zinc-700/60 pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="border-t border-zinc-200 pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
-              <div className="text-sm font-semibold text-zinc-100">Ready to protect your deal?</div>
+              <div className="text-sm font-semibold text-zinc-900">Ready to protect your deal?</div>
               <p className="mt-1 text-sm text-zinc-500">
                 Fixed-fee QoE reports for trades business buyers.
               </p>
@@ -341,7 +341,7 @@ export default function WhatIsQoePage() {
                 transition:
                   'background-color 150ms ease, transform 160ms cubic-bezier(0.23, 1, 0.32, 1)',
               }}
-              className="shrink-0 inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 active:scale-[0.97] text-zinc-950 font-semibold text-sm px-6 py-2.5"
+              className="shrink-0 inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 active:scale-[0.97] text-zinc-950 font-semibold text-sm px-6 py-2.5"
             >
               Get a Quote
               <ArrowRight weight="bold" size={13} />

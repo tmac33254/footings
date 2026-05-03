@@ -6,11 +6,11 @@ import Footer from '@/components/footer'
 export const metadata: Metadata = {
   title: 'EBITDA Normalization in Trades Business Acquisitions',
   description:
-    'Owner compensation, personal vehicles, family payroll, one-time revenue — learn the most common EBITDA add-backs and adjustments buyers miss in HVAC, plumbing, and roofing acquisitions.',
+    "The seller's EBITDA is almost always wrong — not because they're lying, but because small business books are prepared for taxes, not sale. This guide explains how normalization works and what adjustments to expect.",
   openGraph: {
     title: 'EBITDA Normalization in Trades Business Acquisitions',
     description:
-      'The adjustments buyers miss — and why the seller\'s EBITDA number is almost always overstated.',
+      "How to read and recast a seller's EBITDA for HVAC, plumbing, roofing, and other trades acquisitions.",
   },
 }
 
@@ -19,12 +19,13 @@ export default function EbitdaNormalizationPage() {
     <main>
       <Nav />
 
-      <section className="blueprint-grid pt-20 pb-12 border-b border-zinc-700/60">
+      {/* Article header */}
+      <section className="blueprint-grid pt-20 pb-12 border-b border-zinc-200">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
           <a
             href="/resources"
             style={{ transition: 'color 150ms ease' }}
-            className="inline-flex items-center gap-2 text-xs text-zinc-500 hover:text-zinc-300 mb-8 group"
+            className="inline-flex items-center gap-2 text-xs text-zinc-400 hover:text-zinc-700 mb-8 group"
           >
             <ArrowLeft
               size={12}
@@ -34,18 +35,23 @@ export default function EbitdaNormalizationPage() {
             All Resources
           </a>
 
-          <span className="font-mono text-[11px] text-amber-500 tracking-[0.2em] uppercase block mb-4 animate-fade-up animate-delay-100">
-            / EBITDA & Earnings
-          </span>
-          <h1 className="text-3xl md:text-4xl font-bold tracking-tight leading-[1.1] animate-fade-up animate-delay-200">
+          <div className="animate-fade-up animate-delay-100">
+            <span className="font-mono text-[11px] text-amber-600 tracking-[0.2em] uppercase">
+              / Due Diligence
+            </span>
+          </div>
+          <h1 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight leading-[1.1] animate-fade-up animate-delay-200 text-zinc-900">
             EBITDA Normalization in Trades Business Acquisitions
           </h1>
           <div className="mt-5 flex items-center gap-4 animate-fade-up animate-delay-300">
-            <span className="text-sm text-zinc-500">10 min read</span>
-            <span className="text-zinc-700">·</span>
+            <span className="text-sm text-zinc-400">10 min read</span>
+            <span className="text-zinc-200">·</span>
             <div className="flex items-center gap-2">
               {['EBITDA', 'Normalization', 'Adjustments'].map((t) => (
-                <span key={t} className="text-xs font-mono text-zinc-600 px-2 py-0.5 border border-zinc-800">
+                <span
+                  key={t}
+                  className="text-xs font-mono text-zinc-400 px-2 py-0.5 border border-zinc-200"
+                >
                   {t}
                 </span>
               ))}
@@ -54,258 +60,296 @@ export default function EbitdaNormalizationPage() {
         </div>
       </section>
 
+      {/* Article body */}
       <article className="py-16">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
-          <div className="space-y-8 text-zinc-300 text-[16px] leading-[1.75]">
+          <div className="space-y-8 text-zinc-700 text-[16px] leading-[1.75]">
 
-            <p className="text-zinc-200 text-lg leading-relaxed font-medium">
-              The seller&apos;s EBITDA number is almost never the right number. Not because sellers
-              are lying — but because small business financials are built for tax minimization,
-              not for sale. The process of correcting that is called normalization.
+            <p className="text-zinc-800 text-lg leading-relaxed font-medium">
+              When a seller says their business earns $500,000 in EBITDA, that number is almost
+              never what you&apos;ll actually earn as the new owner. That gap isn&apos;t fraud —
+              it&apos;s the natural result of how small business books are kept. Normalization
+              is how you close it.
             </p>
 
             <p>
-              Understanding normalization is one of the most important skills a trades business
-              buyer can develop. It&apos;s the difference between paying $3.8 million for a business
-              that earns what you think it earns — and paying $3.8 million for a business that
-              earns significantly less.
+              This guide explains what EBITDA normalization is, why it matters for trades
+              business acquisitions specifically, and the most common adjustments you should
+              expect to see — and push back on.
             </p>
 
-            <h2 className="text-xl font-bold text-zinc-100 tracking-tight mt-12 mb-4">
-              What EBITDA normalization means
+            <h2 className="text-xl font-bold text-zinc-900 tracking-tight mt-12 mb-4">
+              What normalization actually means
             </h2>
 
             <p>
-              EBITDA stands for Earnings Before Interest, Taxes, Depreciation, and Amortization.
-              It&apos;s a measure of operating profitability — the cash the business generates before
-              financing and non-cash accounting items.
+              EBITDA normalization is the process of adjusting a business&apos;s reported earnings
+              to reflect what a new owner would actually earn running the business at arm&apos;s
+              length. You start with the seller&apos;s stated EBITDA and add or subtract items
+              that are owner-specific, one-time, or otherwise not representative of ongoing
+              operations.
             </p>
 
             <p>
-              &ldquo;Normalized&rdquo; EBITDA adjusts for items that distort the true picture:
-              expenses that aren&apos;t really business costs, revenues that won&apos;t recur, and
-              one-time events that inflate or deflate earnings in a given year.
+              The result is called &ldquo;adjusted EBITDA&rdquo; or, for smaller businesses where the
+              owner is also the operator, &ldquo;Seller Discretionary Earnings&rdquo; (SDE). SDE adds
+              back the owner&apos;s total compensation (salary + distributions + benefits) and
+              replaces it with a market-rate salary for whoever would actually run the business.
             </p>
 
-            <p>
-              The goal is to arrive at a number that represents what the business will
-              actually earn going forward under new ownership.
-            </p>
+            <div className="border-l-2 border-amber-400 pl-6 py-2 my-8">
+              <p className="text-zinc-800 text-[15px] leading-relaxed font-medium not-italic">
+                &ldquo;The seller&apos;s financials tell you what the business earned for them.
+                Normalization tells you what it will earn for you.&rdquo;
+              </p>
+            </div>
 
-            <h2 className="text-xl font-bold text-zinc-100 tracking-tight mt-12 mb-4">
-              The most common adjustments in trades businesses
+            <h2 className="text-xl font-bold text-zinc-900 tracking-tight mt-12 mb-4">
+              Why trades businesses are especially prone to distortion
             </h2>
 
-            <h3 className="text-base font-bold text-zinc-100 mt-8 mb-3">
+            <p>
+              Most trades business owners — HVAC, plumbing, roofing, electrical — run their
+              books to minimize their tax bill, not to present an accurate picture of business
+              performance. This is rational and legal, but it creates a systematic gap between
+              reported earnings and real earnings.
+            </p>
+
+            <p>
+              Common patterns in trades businesses:
+            </p>
+
+            <ul className="space-y-3 mt-4 list-none pl-0">
+              {[
+                'The owner pays himself a below-market salary and takes distributions instead — reducing apparent labor costs artificially',
+                'The business owns and expenses vehicles the owner also uses personally',
+                'Family members are on payroll in roles that would either be eliminated or replaced at lower cost',
+                'The owner defers capital expenditures in the year before a sale, making cash flow look stronger than it is',
+                'Large one-time jobs are presented as part of recurring revenue without context',
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <span className="text-amber-500 font-bold text-xs mt-1.5 shrink-0">—</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+
+            <p>
+              None of these are inherently dishonest. But taken together, they can make a
+              $300,000 EBITDA business look like a $500,000 EBITDA business — and that
+              difference, at a 4× multiple, is $800,000 in purchase price.
+            </p>
+
+            <h2 className="text-xl font-bold text-zinc-900 tracking-tight mt-12 mb-4">
+              The six standard normalization categories
+            </h2>
+
+            <h3 className="text-base font-bold text-zinc-900 mt-8 mb-3">
               1. Owner compensation recast
             </h3>
             <p>
-              This is the biggest adjustment in most trades acquisitions. The owner has been
-              taking an artificially low (or high) salary relative to what it would actually
-              cost to hire someone to do their job.
+              This is usually the largest single adjustment. The seller&apos;s total compensation
+              (W-2 salary + owner draws + distributions + personal benefits paid through the
+              business) gets added back to EBITDA, and a market-rate management salary is
+              subtracted in its place. For a HVAC or plumbing company doing $2–5M in revenue,
+              that replacement salary is typically $80,000–$120,000.
             </p>
+            <p className="mt-4">
+              If the owner is also the primary technician, the replacement cost may be higher —
+              you&apos;re replacing both the manager and a skilled laborer.
+            </p>
+
+            <h3 className="text-base font-bold text-zinc-900 mt-8 mb-3">
+              2. Personal expenses run through the business
+            </h3>
             <p>
-              If the owner is the primary technician and general manager of a $4M HVAC company,
-              replacing their labor and management would cost $130,000–$180,000 in the market.
-              If they&apos;ve been paying themselves $75,000, the difference reduces EBITDA. If
-              they&apos;ve been paying themselves $300,000, the excess above market rate gets
-              added back.
+              Vehicle expenses are the most common — personal trucks, gas, insurance, and
+              maintenance expensed through the company. Also watch for personal cell plans,
+              travel and entertainment, home office deductions, owner&apos;s health and life
+              insurance, and any personal subscription services.
             </p>
-            <div className="bg-zinc-900 border border-zinc-700 p-5 my-6">
-              <div className="text-[10px] font-mono text-zinc-500 tracking-widest uppercase mb-3">
-                Example
+            <p className="mt-4">
+              These get added back to EBITDA because they won&apos;t persist under new ownership.
+              The business doesn&apos;t actually incur those costs — the owner was running them
+              through for tax purposes.
+            </p>
+
+            <h3 className="text-base font-bold text-zinc-900 mt-8 mb-3">
+              3. Non-recurring items
+            </h3>
+            <p>
+              Any revenue or expense that won&apos;t repeat needs to be isolated and handled
+              explicitly. Common examples: a large one-off commercial project, a one-time
+              equipment sale, a legal settlement, a COVID-era grant, or an insurance payout.
+              These are added back (if expense) or stripped out (if one-time revenue) to
+              reveal the baseline operating performance.
+            </p>
+
+            <h3 className="text-base font-bold text-zinc-900 mt-8 mb-3">
+              4. Related-party transactions
+            </h3>
+            <p>
+              If the business rents its shop or warehouse from an LLC owned by the seller,
+              the rent either above or below market needs to be adjusted. If a family
+              member&apos;s company provides materials at a preferred rate, that needs to be
+              normalized to what you&apos;d actually pay. Related-party transactions can inflate
+              or deflate earnings, and they disappear entirely when you buy the business.
+            </p>
+
+            <h3 className="text-base font-bold text-zinc-900 mt-8 mb-3">
+              5. Depreciation and amortization recast
+            </h3>
+            <p>
+              EBITDA adds back D&amp;A by definition, but the treatment of owned equipment,
+              vehicles, and any prior acquisition goodwill still needs to be understood.
+              A business that has been aggressively expensing new equipment under Section 179
+              may show lower profitability than its true cash-generating capacity — but will
+              also face upcoming capex needs that the EBITDA doesn&apos;t reflect.
+            </p>
+
+            <h3 className="text-base font-bold text-zinc-900 mt-8 mb-3">
+              6. Deferred maintenance and near-term capex
+            </h3>
+            <p>
+              This is a downward adjustment — a subtraction from EBITDA, not an add-back.
+              If the seller has been deferring maintenance on equipment, vehicles, or
+              facilities in the 12–24 months before the sale, the cost of that deferred
+              work becomes yours on day one. A thorough normalization flags it; a lazy
+              one doesn&apos;t.
+            </p>
+
+            <h2 className="text-xl font-bold text-zinc-900 tracking-tight mt-12 mb-4">
+              How to read the seller&apos;s add-back schedule
+            </h2>
+
+            <p>
+              Most sellers or their brokers will provide an add-back schedule — a list of
+              the adjustments they believe should be made to their stated EBITDA. This is
+              useful as a starting point, but understand what it is: it&apos;s a marketing
+              document. The seller has every incentive to include every possible add-back
+              and minimize any downward adjustments.
+            </p>
+
+            <p>
+              Common ways seller-provided add-backs are inflated:
+            </p>
+
+            <ul className="space-y-3 mt-4 list-none pl-0">
+              {[
+                'Recurring expenses presented as one-time ("this was an unusual year for fleet repairs")',
+                'Owner compensation replaced at an unrealistically low market rate',
+                'Revenue from a large client presented as stable when the relationship is personal to the owner',
+                'Depreciation added back without acknowledging the real replacement capex schedule',
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <span className="text-amber-500 font-bold text-xs mt-1.5 shrink-0">—</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+
+            <p>
+              Every add-back should be supported by documentation. If the seller says
+              $40,000 was a one-time equipment repair, you should be able to see the invoice
+              and verify it doesn&apos;t appear in prior years.
+            </p>
+
+            <h2 className="text-xl font-bold text-zinc-900 tracking-tight mt-12 mb-4">
+              A normalization example
+            </h2>
+
+            <div className="bg-zinc-50 border border-zinc-200 p-6 my-8">
+              <div className="text-[10px] font-mono text-zinc-400 tracking-widest uppercase mb-4">
+                Example — Plumbing Company, $3.2M Revenue
               </div>
-              <div className="text-sm text-zinc-300 space-y-2">
-                <div className="flex justify-between">
-                  <span>Owner salary on P&L</span>
-                  <span className="font-mono text-zinc-100">$60,000</span>
+              <div className="space-y-3 text-sm">
+                <div className="flex justify-between border-b border-zinc-200 pb-3">
+                  <span className="text-zinc-600">Seller-stated EBITDA</span>
+                  <span className="font-mono text-zinc-900 font-semibold">$480,000</span>
                 </div>
-                <div className="flex justify-between">
-                  <span>Market replacement cost</span>
-                  <span className="font-mono text-zinc-100">$145,000</span>
+                {[
+                  ['Owner compensation add-back (drew $220K vs. $95K market rate)', '+$125,000'],
+                  ['Personal vehicles (2 trucks, personal use portion)', '+$28,000'],
+                  ["Wife's salary (administrative, at market she wouldn't be hired)", '+$52,000'],
+                  ['One-time insurance payout (roof damage)', '+$18,000'],
+                ].map(([label, val]) => (
+                  <div key={label} className="flex justify-between py-1">
+                    <span className="text-zinc-600 pr-4">{label}</span>
+                    <span className="font-mono text-amber-600 shrink-0">{val}</span>
+                  </div>
+                ))}
+                {[
+                  ['Deferred fleet maintenance (4 vehicles past service intervals)', '–$34,000'],
+                  ["Below-market rent from owner's LLC normalized to market", '–$24,000'],
+                ].map(([label, val]) => (
+                  <div key={label} className="flex justify-between py-1">
+                    <span className="text-zinc-600 pr-4">{label}</span>
+                    <span className="font-mono text-red-500 shrink-0">{val}</span>
+                  </div>
+                ))}
+                <div className="flex justify-between border-t border-zinc-200 pt-3 mt-2">
+                  <span className="text-zinc-800 font-semibold">Adjusted EBITDA</span>
+                  <span className="font-mono text-zinc-900 font-bold text-lg">$645,000</span>
                 </div>
-                <div className="flex justify-between border-t border-zinc-700/60 pt-2">
-                  <span>Adjustment to EBITDA</span>
-                  <span className="font-mono text-red-400">(85,000)</span>
+                <div className="flex justify-between pt-1">
+                  <span className="text-zinc-500 text-xs">Price difference at 4× multiple</span>
+                  <span className="font-mono text-zinc-700 font-semibold">+$660,000</span>
                 </div>
               </div>
             </div>
 
-            <h3 className="text-base font-bold text-zinc-100 mt-8 mb-3">
-              2. Personal expenses through the business
-            </h3>
             <p>
-              In owner-operated businesses, personal expenses often run through the P&amp;L. These
-              are real deductions for tax purposes but they&apos;re not real business costs that a
-              new owner would incur. Common examples:
-            </p>
-            <ul className="space-y-2 mt-4">
-              {[
-                'Personal vehicles (often listed as "fleet" or "company vehicles")',
-                'Owner life, disability, and health insurance premiums',
-                'Personal travel and entertainment',
-                'Home office deductions',
-                'Cell phones, equipment, subscriptions used personally',
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <span className="text-amber-500 text-xs mt-1.5 shrink-0">—</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="mt-4">
-              On a $3M revenue HVAC company, personal expenses run through the business might
-              total $40,000–$80,000 annually. Buyers who miss this pay for it in the purchase
-              price.
+              In this case the adjustments actually worked in the buyer&apos;s favor — the
+              business earns more than the seller stated. But the same process can work in
+              reverse: a seller presenting $480,000 EBITDA with aggressive add-backs might
+              normalize down to $310,000, a $680,000 difference in supportable purchase price
+              at a 4× multiple.
             </p>
 
-            <h3 className="text-base font-bold text-zinc-100 mt-8 mb-3">
-              3. Family members on payroll
-            </h3>
-            <p>
-              Spouses, children, and relatives on the payroll — at wages above their economic
-              contribution — are a common add-back. If the owner&apos;s spouse is listed as an
-              &ldquo;office manager&rdquo; but primarily answers the phone a few hours per week,
-              the excess compensation above market value adjusts EBITDA upward.
-            </p>
-            <p>
-              This requires judgment. Not all family members on payroll are excess add-backs.
-              A daughter who legitimately manages scheduling for 40 field technicians is
-              providing real value at or below market. An analysis has to verify what the
-              person actually does.
-            </p>
-
-            <h3 className="text-base font-bold text-zinc-100 mt-8 mb-3">
-              4. One-time and non-recurring revenue
-            </h3>
-            <p>
-              Revenue that won&apos;t repeat is not part of the business&apos;s earnings base. Common
-              examples in trades businesses:
-            </p>
-            <ul className="space-y-2 mt-4">
-              {[
-                'Equipment sales or disposal (especially large HVAC system replacements)',
-                'Insurance claim reimbursements',
-                'Government grants or incentive programs (COVID funds, equipment rebates)',
-                'Contract buyouts or termination payments',
-                'Revenue from discontinued service lines',
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <span className="text-amber-500 text-xs mt-1.5 shrink-0">—</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="mt-4">
-              The distinction between one-time and recurring requires looking at multiple years
-              of P&amp;Ls. A revenue line that appears in only one year, or that the owner
-              can&apos;t convincingly explain as ongoing, should be excluded from normalized earnings.
-            </p>
-
-            <h3 className="text-base font-bold text-zinc-100 mt-8 mb-3">
-              5. Non-recurring expenses
-            </h3>
-            <p>
-              Adjustments can also work in reverse — eliminating one-time costs that depressed
-              earnings in a given year. Examples: large legal settlements, one-time equipment
-              repairs, startup costs for a new service line, or acquisition costs the business
-              itself incurred. These are added back to show what normalized operations look like.
-            </p>
-
-            <h3 className="text-base font-bold text-zinc-100 mt-8 mb-3">
-              6. Rent and related-party transactions
-            </h3>
-            <p>
-              In many trades businesses, the owner also owns the building the company operates
-              from. The lease rate may be above or below market, creating either an inflated
-              expense (reduces EBITDA) or an understated one (inflates EBITDA). The analysis
-              normalizes to a market-rate lease.
-            </p>
-            <p>
-              If the buyer is purchasing the real estate alongside the business, this adjustment
-              may not be material — but it&apos;s still worth identifying and documenting.
-            </p>
-
-            <h2 className="text-xl font-bold text-zinc-100 tracking-tight mt-12 mb-4">
-              Why owner-operated trades businesses overstate earnings more than most
+            <h2 className="text-xl font-bold text-zinc-900 tracking-tight mt-12 mb-4">
+              What to do when you disagree with an adjustment
             </h2>
 
             <p>
-              Trades businesses have several structural features that amplify normalization issues:
+              Normalization is not purely mechanical — judgment calls are involved, and
+              reasonable people can disagree on specific items. When you push back on an
+              adjustment, come with documentation and a specific alternative.
             </p>
 
             <p>
-              <strong className="text-zinc-100">Cash transactions.</strong> HVAC, plumbing, and
-              electrical businesses frequently deal in cash for small residential jobs. Cash
-              transactions are easy to underreport to minimize taxes. Buyers should analyze
-              bank deposits against P&amp;L revenue to check for consistency.
+              &ldquo;I don&apos;t accept this add-back&rdquo; is a negotiating position, not an argument.
+              &ldquo;This expense appears in three of the last four years and cannot be characterized
+              as non-recurring — I&apos;ve excluded it and adjusted the purchase price accordingly&rdquo;
+              is an argument.
             </p>
 
             <p>
-              <strong className="text-zinc-100">Owner is the business.</strong> The more
-              owner-dependent the business is, the more likely the owner&apos;s personal costs and
-              personal customer relationships are intertwined with the business. This complicates
-              normalization because separating &ldquo;owner&rdquo; from &ldquo;business&rdquo; requires judgment calls.
+              The goal isn&apos;t to minimize the purchase price — it&apos;s to pay a price that
+              reflects what you&apos;re actually buying. If the normalization reveals the business
+              is more profitable than stated, that&apos;s useful information too. You want the
+              real number, whatever it is.
             </p>
 
-            <p>
-              <strong className="text-zinc-100">Seasonal patterns.</strong> Heating and cooling
-              businesses have significant revenue seasonality. Single-year EBITDA can look very
-              different depending on which year&apos;s summer was hotter. A three-year average is
-              often more representative than the most recent year — which sellers may choose
-              specifically because it was exceptional.
-            </p>
-
-            <h2 className="text-xl font-bold text-zinc-100 tracking-tight mt-12 mb-4">
-              How to read a normalization schedule
-            </h2>
-
-            <p>
-              A normalization schedule is typically presented as a bridge from stated EBITDA
-              to adjusted EBITDA. Each line item should include:
-            </p>
-            <ul className="space-y-2 mt-4">
-              {[
-                'The amount of the adjustment',
-                'Which P&L line item it comes from',
-                'The source or evidence for the adjustment',
-                'Categorization (one-time vs. recurring, revenue vs. expense)',
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <span className="text-amber-500 text-xs mt-1.5 shrink-0">—</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="mt-4">
-              When evaluating a seller-prepared add-back schedule (which often accompanies
-              the CIM), the question to ask about every item is:{' '}
-              <em className="text-zinc-200">
-                is this an expense the new owner would actually incur?
-              </em>{' '}
-              If not, it&apos;s a legitimate add-back. If it would continue under new ownership,
-              it&apos;s not.
-            </p>
-
-            <div className="border border-zinc-700/60 p-6 mt-10 bg-zinc-900/40">
-              <div className="text-[10px] font-mono text-zinc-500 tracking-widest uppercase mb-3">
+            <div className="border border-zinc-200 p-6 mt-10 bg-amber-50/60">
+              <div className="text-[10px] font-mono text-zinc-400 tracking-widest uppercase mb-3">
                 Bottom Line
               </div>
-              <p className="text-zinc-300 text-[15px] leading-relaxed">
-                EBITDA normalization is not optional. In every trades acquisition, there are
-                adjustments that change the earning picture — often materially. Buyers who
-                rely on the seller&apos;s stated EBITDA are pricing the deal on a number that doesn&apos;t
-                represent what they&apos;ll actually own. Get the normalization done before you
-                agree to a price.
+              <p className="text-zinc-700 text-[15px] leading-relaxed">
+                EBITDA normalization is not optional — it&apos;s the foundation of any credible
+                purchase price. Without it, you&apos;re paying a multiple of a number that doesn&apos;t
+                reflect what you&apos;ll actually earn. A rigorous normalization, done independently
+                by a buy-side analyst, is the single highest-leverage thing you can do before
+                signing a purchase agreement.
               </p>
             </div>
           </div>
         </div>
       </article>
 
-      <section className="py-16 border-t border-zinc-700/60 bg-zinc-900/40">
+      {/* Related articles + CTA */}
+      <section className="py-16 border-t border-zinc-200 bg-zinc-50">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
-          <div className="font-mono text-[11px] text-zinc-500 tracking-[0.2em] uppercase mb-6">
+          <div className="font-mono text-[11px] text-zinc-400 tracking-[0.2em] uppercase mb-6">
             Continue Reading
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
@@ -315,35 +359,44 @@ export default function EbitdaNormalizationPage() {
                 title: "What Is a Quality of Earnings Report? A Buyer's Guide",
               },
               {
-                href: '/resources/working-capital-trap',
-                title: 'The Working Capital Trap: What HVAC and Plumbing Buyers Get Wrong',
+                href: '/resources/add-back-schedule',
+                title: "How to Read a Seller's Add-Back Schedule (And When to Push Back)",
               },
             ].map((article) => (
               <a
                 key={article.href}
                 href={article.href}
                 style={{ transition: 'border-color 150ms ease' }}
-                className="group p-4 border border-zinc-700/60 hover:border-amber-500/40 block"
+                className="group p-4 border border-zinc-200 hover:border-amber-400/60 bg-white block"
               >
-                <div style={{ transition: 'color 150ms ease' }} className="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 leading-snug">
+                <div
+                  style={{ transition: 'color 150ms ease' }}
+                  className="text-sm font-semibold text-zinc-800 group-hover:text-amber-600 leading-snug"
+                >
                   {article.title}
                 </div>
-                <div className="mt-2 flex items-center gap-1 text-xs text-zinc-500">
+                <div className="mt-2 flex items-center gap-1 text-xs text-zinc-400">
                   Read article
                   <ArrowRight size={10} className="group-hover:translate-x-0.5 transition-transform" />
                 </div>
               </a>
             ))}
           </div>
-          <div className="border-t border-zinc-700/60 pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+
+          <div className="border-t border-zinc-200 pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
-              <div className="text-sm font-semibold text-zinc-100">Ready to protect your deal?</div>
-              <p className="mt-1 text-sm text-zinc-500">Fixed-fee QoE reports for trades business buyers.</p>
+              <div className="text-sm font-semibold text-zinc-900">Ready to protect your deal?</div>
+              <p className="mt-1 text-sm text-zinc-500">
+                Fixed-fee QoE reports for trades business buyers.
+              </p>
             </div>
             <a
               href="/#intake"
-              style={{ transition: 'background-color 150ms ease, transform 160ms cubic-bezier(0.23, 1, 0.32, 1)' }}
-              className="shrink-0 inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 active:scale-[0.97] text-zinc-950 font-semibold text-sm px-6 py-2.5"
+              style={{
+                transition:
+                  'background-color 150ms ease, transform 160ms cubic-bezier(0.23, 1, 0.32, 1)',
+              }}
+              className="shrink-0 inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 active:scale-[0.97] text-zinc-950 font-semibold text-sm px-6 py-2.5"
             >
               Get a Quote
               <ArrowRight weight="bold" size={13} />

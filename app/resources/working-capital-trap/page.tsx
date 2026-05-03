@@ -4,13 +4,13 @@ import Nav from '@/components/nav'
 import Footer from '@/components/footer'
 
 export const metadata: Metadata = {
-  title: 'The Working Capital Trap in Trades Business Acquisitions',
+  title: 'The Working Capital Trap: What HVAC and Plumbing Buyers Get Wrong',
   description:
-    "Most buyers negotiate the purchase price and ignore working capital. Then they close, and the business runs out of cash. Here's what working capital means in HVAC and plumbing acquisitions — and how to protect yourself.",
+    'Most buyers negotiate price and ignore working capital. Then they close, and the business runs out of cash in 60 days. This guide explains what working capital means in a trades acquisition and how to protect yourself.',
   openGraph: {
     title: 'The Working Capital Trap: What HVAC and Plumbing Buyers Get Wrong',
     description:
-      'Why most trades business buyers get surprised at closing — and how a working capital peg protects you.',
+      'How to negotiate a working capital peg and avoid running out of cash after closing on a trades acquisition.',
   },
 }
 
@@ -19,12 +19,13 @@ export default function WorkingCapitalTrapPage() {
     <main>
       <Nav />
 
-      <section className="blueprint-grid pt-20 pb-12 border-b border-zinc-700/60">
+      {/* Article header */}
+      <section className="blueprint-grid pt-20 pb-12 border-b border-zinc-200">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
           <a
             href="/resources"
             style={{ transition: 'color 150ms ease' }}
-            className="inline-flex items-center gap-2 text-xs text-zinc-500 hover:text-zinc-300 mb-8 group"
+            className="inline-flex items-center gap-2 text-xs text-zinc-400 hover:text-zinc-700 mb-8 group"
           >
             <ArrowLeft
               size={12}
@@ -34,18 +35,23 @@ export default function WorkingCapitalTrapPage() {
             All Resources
           </a>
 
-          <span className="font-mono text-[11px] text-amber-500 tracking-[0.2em] uppercase block mb-4 animate-fade-up animate-delay-100">
-            / Cash Flow & Working Capital
-          </span>
-          <h1 className="text-3xl md:text-4xl font-bold tracking-tight leading-[1.1] animate-fade-up animate-delay-200">
+          <div className="animate-fade-up animate-delay-100">
+            <span className="font-mono text-[11px] text-amber-600 tracking-[0.2em] uppercase">
+              / Due Diligence
+            </span>
+          </div>
+          <h1 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight leading-[1.1] animate-fade-up animate-delay-200 text-zinc-900">
             The Working Capital Trap: What HVAC and Plumbing Buyers Get Wrong
           </h1>
           <div className="mt-5 flex items-center gap-4 animate-fade-up animate-delay-300">
-            <span className="text-sm text-zinc-500">9 min read</span>
-            <span className="text-zinc-700">·</span>
+            <span className="text-sm text-zinc-400">9 min read</span>
+            <span className="text-zinc-200">·</span>
             <div className="flex items-center gap-2">
               {['Working Capital', 'Closing', 'Cash Flow'].map((t) => (
-                <span key={t} className="text-xs font-mono text-zinc-600 px-2 py-0.5 border border-zinc-800">
+                <span
+                  key={t}
+                  className="text-xs font-mono text-zinc-400 px-2 py-0.5 border border-zinc-200"
+                >
                   {t}
                 </span>
               ))}
@@ -54,262 +60,274 @@ export default function WorkingCapitalTrapPage() {
         </div>
       </section>
 
+      {/* Article body */}
       <article className="py-16">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
-          <div className="space-y-8 text-zinc-300 text-[16px] leading-[1.75]">
+          <div className="space-y-8 text-zinc-700 text-[16px] leading-[1.75]">
 
-            <p className="text-zinc-200 text-lg leading-relaxed font-medium">
-              Most buyers negotiate the purchase price. Few negotiate working capital. Then
-              they close, take the keys, and within 60 days find themselves funding payroll
-              out of pocket. This is called the working capital trap — and it surprises first-time
-              buyers in trades acquisitions more than almost anything else.
+            <p className="text-zinc-800 text-lg leading-relaxed font-medium">
+              You spend six months negotiating the purchase price. You get the seller down
+              $150,000. You close. Sixty days later the business can&apos;t make payroll.
+              This is the working capital trap, and it catches more buyers than any other
+              issue in a trades acquisition.
             </p>
 
-            <h2 className="text-xl font-bold text-zinc-100 tracking-tight mt-12 mb-4">
+            <p>
+              This guide explains what working capital is in the context of a trades
+              business, why sellers have a direct incentive to drain it before closing,
+              and how to protect yourself with a properly structured working capital peg.
+            </p>
+
+            <h2 className="text-xl font-bold text-zinc-900 tracking-tight mt-12 mb-4">
               What working capital is
             </h2>
 
             <p>
-              Working capital is the net short-term assets a business needs to operate
-              day-to-day. The simplified formula is:
+              Working capital is current assets minus current liabilities. In plain English:
+              it&apos;s the net short-term assets the business has available to fund day-to-day
+              operations. The core components in a trades business:
             </p>
 
-            <div className="bg-zinc-900 border border-zinc-700 p-5 my-6 text-center">
-              <div className="font-mono text-base text-zinc-100">
-                Working Capital = Current Assets − Current Liabilities
+            <div className="bg-zinc-50 border border-zinc-200 p-6 my-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">
+                <div>
+                  <div className="text-[10px] font-mono text-zinc-400 tracking-widest uppercase mb-3">
+                    Current Assets
+                  </div>
+                  <div className="space-y-2">
+                    {[
+                      'Accounts receivable (work billed, not yet collected)',
+                      'Inventory (parts, materials on hand)',
+                      'Prepaid expenses',
+                      'Cash',
+                    ].map((item) => (
+                      <div key={item} className="flex items-start gap-2">
+                        <span className="text-amber-500 mt-1 shrink-0">+</span>
+                        <span className="text-zinc-700">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <div className="text-[10px] font-mono text-zinc-400 tracking-widest uppercase mb-3">
+                    Current Liabilities
+                  </div>
+                  <div className="space-y-2">
+                    {[
+                      'Accounts payable (materials, subs not yet paid)',
+                      'Accrued payroll',
+                      'Deferred revenue (deposits collected)',
+                      'Short-term debt',
+                    ].map((item) => (
+                      <div key={item} className="flex items-start gap-2">
+                        <span className="text-red-400 mt-1 shrink-0">–</span>
+                        <span className="text-zinc-700">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div className="mt-5 pt-4 border-t border-zinc-200 flex justify-between text-sm">
+                <span className="text-zinc-600 font-medium">Working Capital</span>
+                <span className="font-mono text-zinc-900 font-semibold">Assets − Liabilities</span>
               </div>
             </div>
 
             <p>
-              Current assets include accounts receivable (money owed to the business), inventory
-              (parts, equipment), and prepaid expenses. Current liabilities include accounts
-              payable (money the business owes suppliers), accrued wages, and deferred revenue
-              (service contracts paid in advance).
+              A business needs positive working capital to operate. If receivables drop or
+              payables spike, the business has less cash available to fund the next payroll
+              cycle, material purchases, and overhead. In a trades business with 30–60 day
+              payment terms, a swing in working capital hits cash quickly.
             </p>
 
-            <p>
-              For a trades business, working capital is the financial cushion that keeps the
-              lights on between the time you pay employees and suppliers and the time customers
-              actually pay you.
-            </p>
-
-            <h2 className="text-xl font-bold text-zinc-100 tracking-tight mt-12 mb-4">
-              Why sellers have every incentive to drain it before closing
+            <h2 className="text-xl font-bold text-zinc-900 tracking-tight mt-12 mb-4">
+              Why sellers drain working capital before closing
             </h2>
 
             <p>
-              Here&apos;s the problem: unless working capital is explicitly addressed in the
-              purchase agreement, the seller walks away with all of it.
+              Here&apos;s the misalignment: the purchase price in most deals is set as a
+              multiple of EBITDA, with working capital transferred at closing. The seller
+              gets to keep any cash above an agreed peg — which means they have a direct
+              financial incentive to maximize collections and delay payments in the 60–90
+              days before close.
             </p>
 
             <p>
-              In the 60–90 days before closing, a motivated seller can:
+              This can happen deliberately or simply through normal seller behavior:
             </p>
 
-            <ul className="space-y-2 mt-4">
+            <ul className="space-y-3 mt-4 list-none pl-0">
               {[
-                'Collect receivables aggressively and delay depositing them to show a clean balance',
-                'Stop paying suppliers (building AP that becomes your liability at close)',
-                'Run through parts inventory without restocking',
-                'Collect annual service contract renewals before close, deferring the revenue',
-                'Distribute excess cash as owner distributions before the sale closes',
+                'Aggressively collecting receivables in the final weeks before close',
+                'Delaying payments to suppliers and subcontractors',
+                'Reducing inventory to minimum levels',
+                'Pulling forward revenue recognition on jobs in progress',
+                'Stopping maintenance spend and vendor prepayments',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3">
-                  <span className="text-amber-500 text-xs mt-1.5 shrink-0">—</span>
+                  <span className="text-amber-500 font-bold text-xs mt-1.5 shrink-0">—</span>
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
 
-            <p className="mt-4">
-              None of these are necessarily fraudulent. But collectively, they can leave the
-              business with $80,000–$150,000 less working capital than it had when you
-              evaluated it. You inherit the obligation to fund operations from day one.
+            <p>
+              The result: the business closes with a lean balance sheet. You immediately
+              inherit the vendor payables the seller delayed, the low inventory that needs
+              restocking, and the reduced receivable pipeline — all while trying to make
+              payroll and run the business you just bought.
             </p>
 
-            <div className="border-l-2 border-amber-500/60 pl-6 py-2 my-8">
-              <p className="text-zinc-200 text-[15px] leading-relaxed font-medium not-italic">
-                &ldquo;The median working capital deficiency we find post-LOI in small trades deals is
-                $127,000. Most buyers found out at the closing table.&rdquo;
+            <div className="border-l-2 border-amber-400 pl-6 py-2 my-8">
+              <p className="text-zinc-800 text-[15px] leading-relaxed font-medium not-italic">
+                &ldquo;The seller isn&apos;t being malicious — they&apos;re optimizing for the same thing
+                you are. Without a peg, their incentives and yours are perfectly misaligned
+                at the worst possible moment.&rdquo;
               </p>
             </div>
 
-            <h2 className="text-xl font-bold text-zinc-100 tracking-tight mt-12 mb-4">
-              Why it hits HVAC and plumbing companies especially hard
+            <h2 className="text-xl font-bold text-zinc-900 tracking-tight mt-12 mb-4">
+              What a working capital peg is
             </h2>
 
             <p>
-              Trades businesses have specific cash flow dynamics that make working capital
-              issues particularly acute:
+              A working capital peg is a contractually agreed minimum amount of working
+              capital that must be in the business at closing. If the business closes with
+              more than the peg, the buyer may owe the seller an additional payment. If
+              it closes below the peg, the seller owes the buyer a dollar-for-dollar
+              reduction in the purchase price.
             </p>
 
             <p>
-              <strong className="text-zinc-100">Seasonal revenue patterns.</strong> An HVAC
-              company does most of its replacement revenue in summer. If the deal closes in
-              February, receivables are at a seasonal low. But payables — for equipment ordered
-              in the fall — may still be outstanding. The buyer takes over at the worst
-              working capital moment of the year.
+              The peg is calculated from the historical normalized working capital of the
+              business — typically an average of the prior 12 or 24 months, excluding any
+              seasonal spikes and cleaning out non-recurring items. A quality of earnings
+              report should always include a recommended working capital peg with this
+              calculation shown.
             </p>
 
-            <p>
-              <strong className="text-zinc-100">Service contract timing.</strong> Annual
-              maintenance contracts are often collected in the spring. If the seller collects
-              renewals in March and the deal closes in April, you inherit the labor obligation
-              for those contracts without the cash to fund them.
-            </p>
-
-            <p>
-              <strong className="text-zinc-100">Equipment-intensive inventory.</strong> HVAC
-              companies carry significant parts inventory — refrigerant, coils, motors,
-              condensing units. If the seller stops restocking in anticipation of the sale,
-              inventory levels drop below what the business needs to operate efficiently.
-              Technicians wait for parts; customers wait for repairs; revenue slows.
-            </p>
-
-            <h2 className="text-xl font-bold text-zinc-100 tracking-tight mt-12 mb-4">
-              What a working capital peg is and how it works
+            <h2 className="text-xl font-bold text-zinc-900 tracking-tight mt-12 mb-4">
+              How the peg calculation works in practice
             </h2>
 
-            <p>
-              A working capital peg is a minimum level of net working capital that the seller
-              must deliver at close. It&apos;s negotiated into the purchase agreement as a closing
-              condition.
-            </p>
-
-            <p>
-              The mechanics:
-            </p>
-
-            <ul className="space-y-3 mt-4">
-              <li className="flex items-start gap-3">
-                <span className="font-mono text-xs text-amber-500 shrink-0 mt-1">01</span>
-                <span>
-                  The buyer and seller agree on a peg amount (e.g., $125,000) based on the
-                  trailing 12-month average working capital.
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="font-mono text-xs text-amber-500 shrink-0 mt-1">02</span>
-                <span>
-                  At close, the actual net working capital is calculated from the closing balance sheet.
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="font-mono text-xs text-amber-500 shrink-0 mt-1">03</span>
-                <span>
-                  If NWC at close is below the peg, the purchase price is reduced dollar-for-dollar.
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="font-mono text-xs text-amber-500 shrink-0 mt-1">04</span>
-                <span>
-                  If NWC exceeds the peg, some deals provide for a purchase price increase
-                  (though this is less common in small deals).
-                </span>
-              </li>
-            </ul>
-
-            <div className="bg-zinc-900 border border-zinc-700 p-5 my-8">
-              <div className="text-[10px] font-mono text-zinc-500 tracking-widest uppercase mb-4">
-                Example
+            <div className="bg-zinc-50 border border-zinc-200 p-6 my-8">
+              <div className="text-[10px] font-mono text-zinc-400 tracking-widest uppercase mb-4">
+                Example — HVAC Company, $4.1M Revenue
               </div>
-              <div className="text-sm text-zinc-300 space-y-2">
-                <div className="flex justify-between">
-                  <span>Agreed purchase price</span>
-                  <span className="font-mono text-zinc-100">$2,800,000</span>
+              <div className="space-y-3 text-sm">
+                <div className="text-zinc-500 mb-2">
+                  Trailing 12-month average working capital
                 </div>
-                <div className="flex justify-between">
-                  <span>Negotiated working capital peg</span>
-                  <span className="font-mono text-zinc-100">$125,000</span>
+                {[
+                  ['Average accounts receivable', '$312,000'],
+                  ['Average inventory', '$88,000'],
+                  ['Average prepaid expenses', '$14,000'],
+                  ['Less: average accounts payable', '–$142,000'],
+                  ['Less: average accrued liabilities', '–$67,000'],
+                ].map(([label, val]) => (
+                  <div key={label} className="flex justify-between py-1 border-b border-zinc-100">
+                    <span className="text-zinc-600">{label}</span>
+                    <span className={`font-mono ${val.startsWith('–') ? 'text-red-500' : 'text-zinc-900'}`}>
+                      {val}
+                    </span>
+                  </div>
+                ))}
+                <div className="flex justify-between pt-2">
+                  <span className="text-zinc-800 font-semibold">Recommended peg</span>
+                  <span className="font-mono text-amber-600 font-bold">$205,000</span>
                 </div>
-                <div className="flex justify-between">
-                  <span>Actual NWC at closing</span>
-                  <span className="font-mono text-red-400">$47,000</span>
-                </div>
-                <div className="flex justify-between border-t border-zinc-700/60 pt-2">
-                  <span>Shortfall</span>
-                  <span className="font-mono text-red-400">(78,000)</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Adjusted final price</span>
-                  <span className="font-mono text-amber-400">$2,722,000</span>
+                <div className="text-[12px] text-zinc-400 pt-1">
+                  If closing balance is below $205K, seller reimburses the shortfall dollar-for-dollar.
                 </div>
               </div>
             </div>
 
-            <h2 className="text-xl font-bold text-zinc-100 tracking-tight mt-12 mb-4">
-              How to set the right peg
+            <h2 className="text-xl font-bold text-zinc-900 tracking-tight mt-12 mb-4">
+              Seasonal businesses need special treatment
             </h2>
 
             <p>
-              The peg should be based on the trailing 12-month average net working capital,
-              calculated from monthly balance sheets. Using an average smooths out seasonal
-              peaks and troughs — otherwise a buyer closing in summer might demand peak-season
-              NWC levels that aren&apos;t representative of the business year-round.
+              HVAC businesses in particular have pronounced seasonality — receivables spike
+              after summer cooling season; they drop in winter. A flat trailing-twelve-month
+              average peg can be wrong by $80,000–$150,000 depending on when the deal closes.
             </p>
 
             <p>
-              A few considerations:
+              For seasonal businesses, the peg should be calculated relative to the same
+              point in the prior year, not just a trailing average. A deal closing in
+              September should use last September&apos;s working capital as the reference — not
+              February&apos;s, which will look very different for a cooling-heavy business.
             </p>
 
-            <ul className="space-y-2 mt-4">
+            <h2 className="text-xl font-bold text-zinc-900 tracking-tight mt-12 mb-4">
+              The post-close cash reserve you&apos;ll need anyway
+            </h2>
+
+            <p>
+              Even with a properly structured peg, plan to have operating reserves available
+              on day one. The business&apos;s prior cash cycle was calibrated to how the seller
+              ran it. You&apos;ll change things — vendor relationships, payment terms, staffing,
+              how you handle deposits — and any change creates temporary cash friction.
+            </p>
+
+            <p>
+              A reasonable reserve target for a trades acquisition is 60–90 days of fixed
+              operating expenses: payroll, rent, insurance, and debt service. For most
+              businesses in the $2–5M revenue range, that&apos;s $150,000–$350,000. If your
+              lender requires this as a condition anyway, treat it as a minimum, not a target.
+            </p>
+
+            <h2 className="text-xl font-bold text-zinc-900 tracking-tight mt-12 mb-4">
+              Red flags in the pre-close period
+            </h2>
+
+            <p>
+              The 30–60 days before closing is when working capital manipulation is most
+              likely. Watch for:
+            </p>
+
+            <ul className="space-y-3 mt-4 list-none pl-0">
               {[
-                "Don't peg to zero. Even if the seller says the business is \"cash-flow positive\" and doesn't need working capital, the timing risk is real.",
-                "Request monthly balance sheets for the past 12–24 months. A single snapshot can be manipulated. Monthly data shows the pattern.",
-                "Watch for unusually low AP at the time of sale — a common indicator the seller stopped paying suppliers.",
-                'Deferred revenue (service contracts, annual maintenance agreements) should be included in liabilities when setting the peg.',
+                'A sudden spike in receivable collections relative to historical pace',
+                'Vendor invoices going unpaid when they were normally current',
+                'Inventory levels dropping without a corresponding decline in active jobs',
+                'Unusually large customer deposits collected in the final weeks',
+                'The seller asking to extend the close date as the balance sheet improves',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3">
-                  <span className="text-amber-500 text-xs mt-1.5 shrink-0">—</span>
+                  <span className="text-red-400 font-bold text-xs mt-1.5 shrink-0">—</span>
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
 
-            <h2 className="text-xl font-bold text-zinc-100 tracking-tight mt-12 mb-4">
-              What buyers should ask before close
-            </h2>
-
             <p>
-              When you&apos;re reviewing a trades acquisition, these are the working capital questions
-              to get answered:
+              Request a final working capital statement 3–5 business days before closing
+              and compare it to the trailing average. If it&apos;s materially different, that&apos;s
+              a price reduction conversation, not a &ldquo;let&apos;s trust the seller&rdquo; moment.
             </p>
 
-            <ul className="space-y-2 mt-4">
-              {[
-                "What is the normalized working capital based on the trailing 12-month monthly average?",
-                "Can you provide monthly balance sheets for the past 24 months?",
-                "What are the terms on open accounts payable — how current are they?",
-                "Are there any large payables (equipment suppliers, insurance premiums) coming due in the 30 days after close?",
-                "What service contract renewals are expected in the 60 days following close?",
-                "Is inventory at normal levels? When was it last fully restocked?",
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <span className="text-amber-500 text-xs mt-1.5 shrink-0">—</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-
-            <div className="border border-zinc-700/60 p-6 mt-10 bg-zinc-900/40">
-              <div className="text-[10px] font-mono text-zinc-500 tracking-widest uppercase mb-3">
+            <div className="border border-zinc-200 p-6 mt-10 bg-amber-50/60">
+              <div className="text-[10px] font-mono text-zinc-400 tracking-widest uppercase mb-3">
                 Bottom Line
               </div>
-              <p className="text-zinc-300 text-[15px] leading-relaxed">
-                Working capital is not a technicality. It&apos;s the cash that keeps the business
-                running after you take the keys. Every trades acquisition should have a working
-                capital peg negotiated into the purchase agreement before close. Without one,
-                you&apos;re accepting the risk that the seller drained the account and you&apos;ll fund
-                operations out of pocket on day one.
+              <p className="text-zinc-700 text-[15px] leading-relaxed">
+                Working capital is not a footnote to the purchase price — it&apos;s a parallel
+                negotiation with real dollar consequences. Buyers who ignore it until
+                closing discover that the business they paid for isn&apos;t quite the one they
+                received. Get a working capital peg built into your LOI, have it calculated
+                by someone independent of the seller, and monitor the balance sheet
+                through close.
               </p>
             </div>
           </div>
         </div>
       </article>
 
-      <section className="py-16 border-t border-zinc-700/60 bg-zinc-900/40">
+      {/* Related articles + CTA */}
+      <section className="py-16 border-t border-zinc-200 bg-zinc-50">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
-          <div className="font-mono text-[11px] text-zinc-500 tracking-[0.2em] uppercase mb-6">
+          <div className="font-mono text-[11px] text-zinc-400 tracking-[0.2em] uppercase mb-6">
             Continue Reading
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
@@ -327,27 +345,36 @@ export default function WorkingCapitalTrapPage() {
                 key={article.href}
                 href={article.href}
                 style={{ transition: 'border-color 150ms ease' }}
-                className="group p-4 border border-zinc-700/60 hover:border-amber-500/40 block"
+                className="group p-4 border border-zinc-200 hover:border-amber-400/60 bg-white block"
               >
-                <div style={{ transition: 'color 150ms ease' }} className="text-sm font-semibold text-zinc-200 group-hover:text-amber-400 leading-snug">
+                <div
+                  style={{ transition: 'color 150ms ease' }}
+                  className="text-sm font-semibold text-zinc-800 group-hover:text-amber-600 leading-snug"
+                >
                   {article.title}
                 </div>
-                <div className="mt-2 flex items-center gap-1 text-xs text-zinc-500">
+                <div className="mt-2 flex items-center gap-1 text-xs text-zinc-400">
                   Read article
                   <ArrowRight size={10} className="group-hover:translate-x-0.5 transition-transform" />
                 </div>
               </a>
             ))}
           </div>
-          <div className="border-t border-zinc-700/60 pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+
+          <div className="border-t border-zinc-200 pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
-              <div className="text-sm font-semibold text-zinc-100">Ready to protect your deal?</div>
-              <p className="mt-1 text-sm text-zinc-500">Fixed-fee QoE reports for trades business buyers.</p>
+              <div className="text-sm font-semibold text-zinc-900">Ready to protect your deal?</div>
+              <p className="mt-1 text-sm text-zinc-500">
+                Fixed-fee QoE reports for trades business buyers.
+              </p>
             </div>
             <a
               href="/#intake"
-              style={{ transition: 'background-color 150ms ease, transform 160ms cubic-bezier(0.23, 1, 0.32, 1)' }}
-              className="shrink-0 inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 active:scale-[0.97] text-zinc-950 font-semibold text-sm px-6 py-2.5"
+              style={{
+                transition:
+                  'background-color 150ms ease, transform 160ms cubic-bezier(0.23, 1, 0.32, 1)',
+              }}
+              className="shrink-0 inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 active:scale-[0.97] text-zinc-950 font-semibold text-sm px-6 py-2.5"
             >
               Get a Quote
               <ArrowRight weight="bold" size={13} />

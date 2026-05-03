@@ -9,13 +9,13 @@ const stats = [
 
 export default function StatsStrip() {
   return (
-    <section className="py-20 border-t border-zinc-700/60">
+    <section className="py-20 border-y border-zinc-200 bg-zinc-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4">
           {stats.map((s, i) => (
             <AnimateIn key={s.label} delay={i * 60}>
               <div
-                className={`px-8 py-6 ${i !== 0 ? 'border-l border-zinc-800' : ''} ${i >= 2 ? 'border-t border-zinc-800 md:border-t-0' : ''} first:pl-0`}
+                className={`px-8 py-6 ${i !== 0 ? 'border-l border-zinc-200' : ''} ${i >= 2 ? 'border-t border-zinc-200 md:border-t-0' : ''} first:pl-0`}
               >
                 <div
                   className="font-mono font-semibold text-amber-500 tabular-nums leading-none tracking-tight"
@@ -23,8 +23,8 @@ export default function StatsStrip() {
                 >
                   {s.value}
                 </div>
-                <div className="mt-2 text-sm font-semibold text-zinc-200">{s.label}</div>
-                <div className="mt-0.5 text-xs text-zinc-500">{s.sub}</div>
+                <div className="mt-2 text-sm font-semibold text-zinc-800">{s.label}</div>
+                <div className="mt-0.5 text-xs text-zinc-400">{s.sub}</div>
               </div>
             </AnimateIn>
           ))}

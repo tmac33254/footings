@@ -21,16 +21,16 @@ const points = [
 
 export default function WhyUs() {
   return (
-    <section className="py-24 bg-zinc-900/40 border-t border-zinc-700/60">
+    <section className="py-24 bg-zinc-50 border-t border-zinc-200">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <AnimateIn>
-          <span className="font-mono text-[11px] text-amber-500 tracking-[0.2em] uppercase">
+          <span className="font-mono text-[11px] text-amber-600 tracking-[0.2em] uppercase">
             / Why Footings
           </span>
-          <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight max-w-2xl">
+          <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight max-w-2xl text-zinc-900">
             No &ldquo;decades of experience.&rdquo; No vague guarantees.
           </h2>
-          <p className="mt-4 text-zinc-300 leading-relaxed max-w-xl">
+          <p className="mt-4 text-zinc-600 leading-relaxed max-w-xl">
             Here&apos;s what&apos;s actually true, and why it matters for your deal.
           </p>
         </AnimateIn>
@@ -38,16 +38,15 @@ export default function WhyUs() {
         <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-0">
           {points.map((p, i) => (
             <AnimateIn key={i} delay={i * 30}>
-              <div className="py-8 border-t border-zinc-700/60">
-                <div className="text-sm font-semibold text-zinc-100 leading-snug">
+              <div className="py-8 border-t border-zinc-200">
+                <div className="text-sm font-semibold text-zinc-900 leading-snug">
                   {p.label}
                 </div>
-                <p className="mt-3 text-[15px] text-zinc-300 leading-relaxed">{p.body}</p>
+                <p className="mt-3 text-[15px] text-zinc-600 leading-relaxed">{p.body}</p>
               </div>
             </AnimateIn>
           ))}
         </div>
-
       </div>
     </section>
   )
