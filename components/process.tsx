@@ -25,41 +25,47 @@ const steps = [
 
 export default function Process() {
   return (
-    <section className="py-24 border-t border-zinc-200">
+    <section className="py-28 border-t border-zinc-200 geo-lines relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <AnimateIn>
           <span className="font-mono text-[11px] text-amber-600 tracking-[0.2em] uppercase">
             / The Process
           </span>
-          <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-zinc-900">
+          <h2 className="mt-4 text-4xl md:text-5xl font-bold tracking-tighter text-zinc-900 leading-[1.05]">
             Four steps from LOI to answers.
           </h2>
         </AnimateIn>
 
-        {/* Desktop: horizontal timeline */}
+        {/* Desktop: horizontal cards */}
         <div className="hidden md:grid md:grid-cols-4 gap-6 mt-16">
           {steps.map((step, i) => (
             <AnimateIn key={step.number} delay={i * 100}>
-              <div className="relative group">
-                {/* Decorative background number */}
+              <div className="relative group card-lift bg-white border border-zinc-200 p-6 pt-14 overflow-hidden">
+                {/* Big decorative number — amber tinted, atmospheric */}
                 <div
-                  className="absolute -top-6 -left-1 font-mono font-bold text-zinc-200 leading-none pointer-events-none select-none"
-                  style={{ fontSize: 'clamp(5rem, 8vw, 7rem)' }}
+                  className="absolute -top-4 -left-2 font-mono font-bold leading-none pointer-events-none select-none"
+                  style={{
+                    fontSize: '7rem',
+                    color: 'rgba(245, 158, 11, 0.12)',
+                    letterSpacing: '-0.05em',
+                  }}
                   aria-hidden="true"
                 >
                   {step.number}
                 </div>
 
-                {/* Content */}
-                <div className="relative z-10 pt-12">
-                  {/* Connector dot */}
-                  <div className="flex items-center gap-3 mb-5">
-                    <div className="w-2 h-2 rounded-full bg-amber-500 shrink-0" />
-                    {i < steps.length - 1 && (
-                      <div className="flex-1 h-px bg-zinc-200" />
-                    )}
-                  </div>
-                  <div className="text-base font-semibold text-zinc-900 leading-snug">
+                {/* Connector line to next step */}
+                {i < steps.length - 1 && (
+                  <div className="absolute top-6 right-0 w-6 h-px bg-zinc-200 translate-x-6 hidden lg:block" />
+                )}
+
+                {/* Amber dot */}
+                <div className="relative z-10 mb-5">
+                  <div className="w-2 h-2 rounded-full bg-amber-500" />
+                </div>
+
+                <div className="relative z-10">
+                  <div className="text-sm font-bold text-zinc-900 leading-snug tracking-tight">
                     {step.title}
                   </div>
                   <p className="mt-2.5 text-[13px] text-zinc-500 leading-relaxed">
@@ -79,8 +85,7 @@ export default function Process() {
                 {i < steps.length - 1 && (
                   <div className="absolute left-3.5 top-8 bottom-0 w-px bg-zinc-200" />
                 )}
-                {/* Node */}
-                <div className="relative z-10 w-7 h-7 shrink-0 flex items-center justify-center rounded-full border border-zinc-200 bg-white shadow-sm">
+                <div className="relative z-10 w-7 h-7 shrink-0 flex items-center justify-center border border-zinc-200 bg-white shadow-sm">
                   <div className="w-1.5 h-1.5 rounded-full bg-amber-500" />
                 </div>
                 <div className="pt-0.5">
